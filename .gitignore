@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+
+data/raw/*.parquet
+data/processed/*.parquet
+data/raw/cache/
+outputs/*
+!outputs/.gitkeep
+share/data/*.parquet

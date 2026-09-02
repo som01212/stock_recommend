@@ -1,0 +1,387 @@
+================================================================================
+S&P500 10년치 데이터 파이프라인 프로젝트 - 작업 기록
+================================================================================
+
+프로젝트 위치: /Users/choedasom/lab_middle_project
+목표: S&P500 종목의 10년치 OHLCV를 수집/전처리/피처엔지니어링하여,
+      "안정성 우선 + 수익률 보조" 기준으로 종목을 군집화하고 주기적으로
+      리밸런싱하는 전략을 백테스팅한다 (Low Volatility Factor 전략 유형).
+
+
+================================================================================
+1. 프로젝트 구조
+================================================================================
+
+notebooks/
+  01_collect_data.ipynb   - API 호출 (유일하게 네트워크 접근하는 노트북)
+  02_preprocessing.ipynb  - raw -> processed 정제
+  03_check_data.ipynb     - 최종 데이터 검증
+  04_new_colums.ipynb     - 피처 엔지니어링 + 리밸런싱 설계
+
+src/
+  get_tickers.py    - S&P500 구성종목 조회 (현재/과거)
+  collect_prices.py - 가격 수집 (yfinance -> Yahoo chart -> Tiingo 폴백)
+  preprocess.py      - 정제 로직 (컬럼 통일, OHLC 정합성 등)
+  feature.py          - 60/120일 파생 피처 계산
+  validate.py          - 최종 데이터셋 검증
+
+.env (git 무시됨) - TIINGO_API_KEY 저장
+
+
+================================================================================
+2. 로컬 환경 전환 과정에서 겪은 트러블슈팅
+================================================================================
+
+(1) macOS 파일 권한 문제
+  - 증상: ModuleNotFoundError: No module named 'src' (src 폴더가 분명히 있는데도)
+  - 원인: 프로젝트가 ~/Downloads 안에 있었는데, macOS는 Downloads/Desktop/Documents
+    폴더를 앱별로 접근 권한을 따로 요구함. VSCode Jupyter 커널 프로세스가 그 권한이
+    없어서 조용히 실패.
+  - 해결: 프로젝트를 ~/Downloads 밖(~/lab_middle_project)으로 이동.
+
+(2) 파이썬 모듈 캐싱 문제 (반복적으로 발생한 이슈)
+  - 증상: .py 파일을 수정해도 노트북에서 반영이 안 됨.
+  - 원인: import한 모듈은 sys.modules에 캐시되고, 커널이 살아있는 한 재사용됨.
+  - 해결: 모든 노트북의 import 셀 맨 앞에 아래 코드를 넣음.
+    ```python
+    for m in list(sys.modules):
+        if m == 'src' or m.startswith('src.'):
+            del sys.modules[m]
+    ```
+
+(3) PROJECT_ROOT 경로 자동탐지 실패
+  - Path.cwd() 기반 자동탐지가 VSCode 커널 설정에 따라 신뢰할 수 없어서,
+    결국 하드코딩으로 해결:
+    ```python
+    PROJECT_ROOT = Path('/Users/choedasom/lab_middle_project')
+    assert (PROJECT_ROOT / 'src' / 'xxx.py').is_file(), f'경로 확인 필요: {PROJECT_ROOT}'
+    ```
+
+(4) 여러 Jupyter 커널이 동시에 살아있어서 시스템이 느려짐
+  - `ps aux | grep ipykernel`로 확인해보니 최대 14~15개까지 쌓여있었음.
+  - 오래된(당일 아닌) 커널들만 골라서 kill로 정리.
+
+
+================================================================================
+3. 데이터 수집 (01_collect_data.ipynb / collect_prices.py)
+================================================================================
+
+3단계 폴백 구조: yfinance -> Yahoo chart API -> Tiingo
+  - 1차: yfinance (제일 빠르고 대부분 성공)
+  - 2차: Yahoo chart API 직접 호출 (1차 실패 종목만 재시도)
+  - 3차: Tiingo (API 키 필요, 시간당 요청 제한 있음)
+
+날짜 상수와 "끝 미포함" 규칙:
+  ```python
+  START_DATE = "2016-01-01"
+  # All collectors treat `end` as exclusive, so this includes 2026-06-30.
+  END_DATE = "2026-07-01"
+  ```
+  - yfinance의 history(start, end)가 [start, end) 반개구간으로 동작하기 때문에,
+    특정 날짜까지 포함하려면 end에 그 다음날을 넣어야 함.
+
+버그 수정 1 - Tiingo 캐시가 날짜범위를 확인 안 하던 문제:
+  - 예전: 캐시에 그 티커가 "존재하기만" 하면 재수집을 건너뜀 -> 기간을 넓혀
+    재수집해도 캐시 때문에 일부 기간이 조용히 누락될 위험.
+  - 수정 (TiingoFallback.recover 내부):
+    ```python
+    start_ts = pd.Timestamp(start)
+    last_needed_ts = pd.Timestamp(end) - pd.Timedelta(days=1)
+    if len(cached):
+        coverage = cached.groupby("Ticker")["Date"].agg(["min", "max"])
+        have = set(
+            coverage[
+                (coverage["min"] <= start_ts) & (coverage["max"] >= last_needed_ts)
+            ].index
+        )
+    else:
+        have = set()
+    ```
+
+버그 수정 2 - preprocess.py에 START_DATE/END_DATE가 독립적으로 중복 정의:
+  - collect_prices.py를 고쳐도 preprocess.py는 자기 파일 안에서 따로 계산하고
+    있어서 반영이 안 됐음. 단일 진실 공급원으로 통일:
+    ```python
+    from .collect_prices import END_DATE, START_DATE
+    ```
+
+버그 수정 3 - OHLC 논리적 모순 (High < Low, Close가 그날 범위 밖 등):
+  - 500개 종목 중 117개, 총 280건 발견.
+  - Open/Close는 원본 유지, High/Low만 그날 O/H/L/C 중 최댓값/최솟값으로 재계산:
+    ```python
+    frame["_ohlc_inconsistent"] = (
+        (frame["High"] < frame["Low"])
+        | (frame["Close"] > frame["High"]) | (frame["Close"] < frame["Low"])
+        | (frame["Open"] > frame["High"]) | (frame["Open"] < frame["Low"])
+    )
+    ohlc = frame[["Open", "High", "Low", "Close"]]
+    frame["High"] = ohlc.max(axis=1)
+    frame["Low"] = ohlc.min(axis=1)
+    ```
+  - 수정 후 최종 데이터의 OHLC 모순 행: 0건.
+
+S&P500 지수 자체 수집 (베타 계산용):
+  ```python
+  def collect_sp500_index(start=START_DATE, end=END_DATE) -> pd.DataFrame:
+      """Collect the S&P 500 index separately for beta calculation.
+      The returned frame contains only Date and adjusted Close and is
+      never mixed into the constituent OHLCV panel."""
+      frame, yahoo_error = fetch_yahoo("^GSPC", start, end, label_as="^GSPC")
+      if frame is None or len(frame) < MIN_ROWS_KEEP:
+          frame, chart_error = fetch_yahoo_chart("^GSPC", start, end, label_as="^GSPC")
+          ...
+      return frame[["Date", "Close"]].dropna().drop_duplicates("Date", keep="last")...
+  ```
+  -> data/raw/sp500_beta_df.parquet 생성
+
+
+================================================================================
+4. 생존자 편향(Survivorship Bias) 발견 및 보정  <- 가장 중요한 작업
+================================================================================
+
+문제 인식:
+  - get_sp500_universe()는 "오늘 기준" 구성종목(503개)만 반환.
+  - 10년치 데이터를 이 503개로만 채우면, 그 사이 파산/상장폐지/인수합병으로
+    편출된 종목은 애초에 존재하지 않는 셈이 되어 백테스팅 결과가 실제보다
+    좋게 나오는 착시가 생김.
+
+해결 방법 - 과거 편입/편출 이력 활용:
+  - 프로젝트가 이미 쓰고 있던 fja05680/sp500 GitHub 저장소(REPO_ZIP) 안에
+    "sp500_ticker_start_end.csv"(티커별 편입일~편출일)가 포함돼 있음을 발견.
+  - 새 함수 추가 (src/get_tickers.py):
+    ```python
+    def _load_membership_history(force_refresh=False) -> pd.DataFrame:
+        """Load and normalize ticker-level S&P500 membership interval history.
+        A ticker can appear multiple times (rejoined after removal)."""
+        ...
+
+    def get_historical_sp500_universe(start, end, force_refresh=False) -> pd.DataFrame:
+        """Return every ticker that was an S&P 500 member at any point in [start, end)."""
+        membership = _load_membership_history(force_refresh)
+        start_ts, end_ts = pd.Timestamp(start), pd.Timestamp(end)
+        overlaps = (membership["start_date"] < end_ts) & (
+            membership["end_date"].isna() | (membership["end_date"] >= start_ts)
+        )
+        tickers = sorted(membership.loc[overlaps, "ticker"].dropna().unique())
+        ...
+    ```
+
+결과:
+  - 현재(오늘) 유니버스: 503개
+  - 2016~2026 사이 한 번이라도 구성종목이었던 유니버스: 729개
+  - 생존자 편향으로 누락됐던 종목: 226개 (전체의 31%)
+  - 근거 검증: BBBY(1999-10-01~2017-07-26), AET(1996-01-02~2018-11-29, CVS
+    인수시점과 일치), ANSS(2017-06-19~2025-07-18), ATVI(2015-08-31~2023-10-18,
+    마이크로소프트 인수시점과 일치) 등 실제 기업 이벤트와 날짜가 맞아떨어짐.
+
+01_collect_data.ipynb 수정 - 수집 대상을 729개로 확장:
+  ```python
+  from src.get_tickers import get_sp500_universe, get_historical_sp500_universe
+  current_universe = get_sp500_universe()
+  historical_universe = get_historical_sp500_universe(START_DATE, END_DATE)
+  sp500_universe = historical_universe.merge(
+      current_universe[['ticker', 'company', 'sector']], on='ticker', how='left'
+  )
+  sp500_universe['company'] = sp500_universe['company'].fillna(sp500_universe['ticker'])
+  sp500_universe['sector'] = sp500_universe['sector'].fillna('Unknown')
+  ```
+
+수집 결과 (1차, Tiingo 키 없이):
+  - 729개 목표 중 605개 성공 (226개 중 107개 복구, 119개 실패)
+
+Tiingo API 키 설정 후 재수집:
+  - .env 파일(git 무시)에 TIINGO_API_KEY 저장, 노트북 첫 셀에서 os.environ으로 로드
+  - 주의: TIINGO_API_KEY는 모듈 임포트 시점에 고정되는 상수라, .env 로드는
+    반드시 sys.modules 캐시 삭제(재임포트) *이전*에 실행해야 함.
+  - Tiingo 무료 플랜 제한 50건/시간 -> 요청당 73초 강제 대기 (124건 x 73초 ≈ 2.5시간,
+    실제로는 429 재시도 등으로 5시간 이상 소요됨)
+  - 최종 결과: 729개 중 708개 성공(97%), 21개 최종 실패
+  - 226개 편출종목 중 최종 207개(91.6%) 복구, 19개만 데이터 자체가 안 남아있음
+  - 소스별: yahoo 605개, tiingo 103개
+
+Tiingo 진행률 표시 추가 (recover() 함수에 tqdm 없어서 "멈춘 것처럼" 보이던 문제):
+  ```python
+  for index, ticker in enumerate(tqdm(todo, desc="3차 Tiingo")):
+      frame, error = self._fetch_one(ticker, start, end)
+      ...
+  ```
+
+리밸런싱 시점별 자격(Point-in-time Membership) 필터 - 2단계 심화 보정:
+  - 문제: "그 종목이 그 날짜에 가격 데이터가 있으면" 무조건 리밸런싱 후보로
+    넣고 있었음. 이건 "그 날짜에 실제 S&P500 구성종목이었는지"와 다름.
+  - 예시: MRVL(2026-06-22 편입)이 2016년 리밸런싱 스냅샷에도 후보로 잘못 등장.
+    OKE는 2001년 편출, 2010년 재편입(여러 번 편입 가능하므로 전체 이력 확인 필요).
+  - 검증 결과: rebalance_60df 27,757개 (종목,날짜) 조합 중 6,208개(22.4%)가
+    실제로는 그 시점에 구성종목이 아니었던 "위반" 케이스.
+  - 새 함수 추가 (src/get_tickers.py):
+    ```python
+    def filter_by_membership(df, ticker_col="Ticker", date_col="Date",
+                              force_refresh=False) -> pd.DataFrame:
+        """Keep only rows where ticker_col was an actual S&P 500 member
+        on date_col."""
+        membership = _load_membership_history(force_refresh)[["ticker", "start_date", "end_date"]]
+        merged = df.merge(membership, left_on=ticker_col, right_on="ticker", how="left")
+        is_member = (merged[date_col] >= merged["start_date"]) & (
+            merged["end_date"].isna() | (merged[date_col] < merged["end_date"])
+        )
+        merged["_is_member"] = is_member.fillna(False)
+        eligible = (
+            merged.groupby([ticker_col, date_col])["_is_member"]
+            .any().rename("_eligible").reset_index()
+        )
+        result = df.merge(eligible, on=[ticker_col, date_col], how="left")
+        return result.loc[result["_eligible"].fillna(False)].drop(columns="_eligible")
+    ```
+  - 여러 번 편입/편출된 종목(예: AAL은 1996~1997, 2015~2024 두 구간)도 전체
+    이력 중 하나라도 그 날짜를 포함하면 인정하도록 처리.
+  - 검증: AET(편출일 2018-11-29) -> 필터 후 마지막 등장 시점 2018-11-09로 정확히 컷.
+
+설계 원칙 정리 (raw 데이터는 안 자르고, 리밸런싱 후보만 필터링):
+  - sp500_universe.csv, final_df_raw.parquet, sp500_beta_df.parquet은 날짜
+    필터링을 하지 않음 (의도적).
+  - 이유: final_df_raw는 60/120일 롤링 피처 계산의 "재료"이므로, 편입 전
+    데이터까지 넉넉히 있어야 재편입 시점의 롤링 계산이 정상 작동함.
+  - 날짜별 정확한 자격 검증은 오직 리밸런싱 후보 선정 단계(rebalance_60df/120df)
+    에서만 적용.
+
+
+================================================================================
+5. 피처 엔지니어링 (src/feature.py)
+================================================================================
+
+add_features(prices, sp500_beta_df, windows=(60,120)) 함수가 종목별로 그룹핑해서
+각 날짜 기준 과거 N일(60 또는 120)치 데이터로만 지표를 계산.
+docstring: "All rolling features use only information available on or before
+each row's date." (lookahead bias 원천 차단)
+
+8개 지표:
+  - volatility_Nd: 연환산 변동성 (일별 수익률 표준편차 x sqrt(252))
+  - mdd_Nd: 최대낙폭 (구간 내 고점 대비 최대 하락률)
+  - downside_volatility_Nd: 하방 변동성 (하락일만 골라서 계산)
+  - beta_Nd: 시장 베타 (종목-시장 공분산 / 시장분산)
+  - ma_gap_Nd: 이동평균 이격도 (종가/이동평균 - 1)
+  - rsi_Nd: 상대강도지수 (평균상승/평균하락 비율 기반, 0~100)
+  - momentum_Nd / return_Nd: 기간수익률 (완전히 동일한 값, 중복 컬럼!)
+  - cagr_10y: 보조지표, 클러스터링에서 제외 (아래 참고)
+
+버그 발견 - momentum과 return이 완전히 동일:
+  ```python
+  frame[f"momentum_{window}d"] = period_return
+  frame[f"return_{window}d"] = period_return   # 같은 값 두 번 저장
+  ```
+  상관계수 1.0으로 확인됨. return_60d만 남기고 momentum_60d는 제외 결정.
+
+cagr_10y를 클러스터링에서 제외한 이유 (feature.py에 주석으로 남김):
+  ```python
+  # 보조지표: CAGR, 현재 가격과 10년 전 가격을 이용해 연평균 복합성장률을 계산
+  # 참고용으로만 남겨둠 - 클러스터링/모델 피처로는 쓰지 않음
+  # - 10년치 과거 데이터가 있어야 값이 나와서 결측률이 매우 높음 (전체 행의 약 95%)
+  # - 60/120일 롤링 윈도우와 기준 기간이 달라 다른 피처들과 일관성이 없음
+  ```
+  (참고: cagr_10y 자체는 rolling shift 방식이라 lookahead bias는 아님. 결측률과
+  기간 불일치가 제외 사유.)
+
+
+================================================================================
+6. 다중공선성 분석 및 최종 피처 선택
+================================================================================
+
+그룹 내부 상관관계 (60일 기준):
+  - volatility <-> downside_volatility: 0.93 (거의 중복)
+  - volatility <-> mdd: -0.77 (강한 상관)
+  - beta <-> 나머지: 0.32~0.46 (상대적으로 독립적)
+
+그룹 간(안정성 vs 수익률) 상관관계 - 핵심 발견:
+  - mdd <-> 수익률그룹(ma_gap/rsi/return): 0.47~0.58로 꽤 높게 얽혀 있음
+    (MDD는 계산 구조상 최근에 많이 오른 종목일수록 낙폭이 작게 나오는 특성 때문)
+  - beta <-> 수익률그룹: 0.00~0.09로 거의 무관 -> 가장 "순수한" 안정성 지표
+  - volatility <-> 수익률그룹: -0.02~-0.14로 낮음
+
+120일 윈도우로도 같은 패턴 재현 확인 (윈도우 늘려도 다중공선성 구조는 안 바뀜).
+
+최종 확정 (2026-08-26 결정):
+  - 안정성(1순위): beta_60d, volatility_60d
+  - 수익률(2순위): return_60d, rsi_60d
+  -> data/processed/cluster_60df.parquet, cluster_120df.parquet 로 저장
+
+
+================================================================================
+7. 리밸런싱 설계 및 Drift 검증
+================================================================================
+
+왜 리밸런싱이 필요한가:
+  - 특정 날짜 하나만 골라 군집화하면 표본 1개 -> 통계적으로 무의미.
+  - 60일 간격으로 43개(120일 간격이면 22개) 독립적인 판단 시점을 만들어
+    반복 검증해야 "전략을 꾸준히 실행했을 때 통했는가"를 확인 가능.
+
+```python
+all_dates = sorted(cluster_60df['Date'].unique())
+rebalance_dates = all_dates[::60]
+rebalance_snapshots = cluster_60df[cluster_60df['Date'].isin(rebalance_dates)].copy()
+```
+
+Drift 검증 (스냅샷 값이 다음 리밸런싱까지 얼마나 어긋나는지):
+  - 같은 종목의 이번 값과 직전 값 차이(diff)의 표준편차를, 원본 값의 표준편차로
+    나눠서 비율로 비교. 비율이 1에 가깝거나 넘으면 "스냅샷 하나로 그 기간을
+    대표하기 위험하다"는 뜻.
+
+  | 지표          | 60일 비율 | 120일 비율 |
+  |---------------|-----------|------------|
+  | beta          | 0.84      | 0.71       |
+  | volatility    | 0.99      | 0.90       |
+  | return        | 1.40      | 1.31       |
+  | rsi           | 1.24      | 1.11       |
+
+  - 수익률 계열(return/rsi)이 안정성 계열(beta/volatility)보다 훨씬 불안정
+    (모멘텀 신호는 원래 지속성이 약하다는 금융 이론과 일치).
+  - 120일 윈도우가 60일보다 전반적으로 덜 흔들리지만, 리밸런싱 횟수가
+    44개->22개로 절반이 되어 통계적 표본은 줄어드는 트레이드오프.
+
+결정 (2026-08-26): 구조를 미리 복잡하게 바꾸지 않고, 일단 43번(또는 22번)
+백테스팅을 먼저 끝까지 돌린다. 결과가 안 좋으면 그때 이 drift를 원인 후보로
+검토한다.
+
+
+================================================================================
+8. 최종 데이터셋 인벤토리 (2026-08-27 기준)
+================================================================================
+
+[data/raw/]
+  sp500_universe.csv        729행 x 4열   - 수집 대상 명단(현재503+과거편출226)
+  final_df_raw.parquet      1,663,038행   - 708종목 일별 OHLCV 원본
+  final_missing_df.csv      21행          - 끝까지 수집 실패한 종목/사유
+  sp500_beta_df.parquet     2,637행       - S&P500 지수 자체 종가(베타용)
+
+[data/processed/]
+  final_df.parquet          1,663,038행   - 정제 완료(OHLC모순 0건), 708종목
+  coverage_df.csv           708행         - 종목별 데이터 품질 요약
+  final_missing_df.csv      21행          - 최종 실패 명단
+  final_60_df.parquet       1,663,038행   - 60일 파생피처 8종 + cagr_10y 포함
+  final_120_df.parquet      1,663,038행   - 120일 버전
+  cluster_60df.parquet      1,663,038행   - 확정 4개 피처만(beta/vol/return/rsi)
+  cluster_120df.parquet     1,663,038행   - 120일 버전
+  rebalance_60df.parquet    21,549행, 680종목 - 60일 간격 44시점,
+                                                시점별 자격 필터까지 완료
+  rebalance_120df.parquet   10,764행, 671종목 - 120일 간격 22시점, 동일 필터 완료
+
+
+================================================================================
+9. 다음 단계 (미완료)
+================================================================================
+
+  [ ] rebalance_60df/120df로 실제 군집화 알고리즘(KMeans 등) 실행
+  [ ] 안정성 피처에 명시적 가중치 부여 (표준화 후 가중치 곱하는 방식 검토)
+  [ ] 각 리밸런싱 시점마다 군집화 -> "안정 그룹" 정의 -> 다음 기간 수익률로 성과 검증
+  [ ] 43번(또는 22번) 반복해서 백테스팅 결과 집계
+  [ ] Drift 문제(특히 return/rsi)가 실제 성과에 영향 주는지 사후 검토
+
+
+================================================================================
+10. 노션 문서
+================================================================================
+
+- S&P500 10년치 데이터 수집 파이프라인 정리 (01~03 단계 정리)
+- 피처 엔지니어링 & 리밸런싱 설계 (위 페이지의 하위 페이지, 04단계 정리)
+※ 생존자 편향 보정 작업은 아직 노션에 별도 정리 안 됨 (요청 시 작성 가능)
+
+================================================================================

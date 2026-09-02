@@ -1,0 +1,708 @@
+Ticker,n_rows,actual_start_date,actual_end_date,n_price_imputed,n_ohlc_inconsistent,n_volume_missing,sources,expected_rows_10y,coverage_10y,short_history,has_quality_issue,company,sector
+A,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Agilent Technologies,Health Care
+AABA,948,2016-01-04,2019-11-06,0,0,0,tiingo,2738,0.3462,True,False,AABA,Unknown
+AAL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AAL,Unknown
+AAP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AAP,Unknown
+AAPL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Apple Inc.,Information Technology
+ABBV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AbbVie,Health Care
+ABMD,1758,2016-01-04,2023-01-03,0,0,0,tiingo,2738,0.6421,True,False,ABMD,Unknown
+ABNB,1393,2020-12-10,2026-06-30,0,0,0,yahoo,2738,0.5088,True,False,Airbnb,Consumer Discretionary
+ABT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Abbott Laboratories,Health Care
+ACGL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Arch Capital Group,Financials
+ACN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Accenture,Information Technology
+ADBE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Adobe Inc.,Information Technology
+ADI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Analog Devices,Information Technology
+ADM,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Archer Daniels Midland,Consumer Staples
+ADP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Automatic Data Processing,Industrials
+ADSK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Autodesk,Information Technology
+ADT,2122,2018-01-19,2026-06-30,0,0,0,yahoo,2738,0.775,True,False,ADT,Unknown
+AEE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ameren,Utilities
+AEP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,American Electric Power,Utilities
+AES,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,AES Corporation,Utilities
+AET,733,2016-01-04,2018-11-28,0,0,0,tiingo,2738,0.2677,True,False,AET,Unknown
+AFL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Aflac,Financials
+AGN,1095,2016-01-04,2020-05-08,0,0,0,tiingo,2738,0.3999,True,False,AGN,Unknown
+AIG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,American International Group,Financials
+AIV,2637,2016-01-04,2026-06-30,0,7,0,yahoo,2738,0.9631,False,True,AIV,Unknown
+AIZ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Assurant,Financials
+AJG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Arthur J. Gallagher & Co.,Financials
+AKAM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Akamai Technologies,Information Technology
+ALB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Albemarle Corporation,Materials
+ALGN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Align Technology,Health Care
+ALK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ALK,Unknown
+ALL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Allstate,Financials
+ALLE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Allegion,Industrials
+ALXN,1399,2016-01-04,2021-07-28,0,0,0,tiingo,2738,0.511,True,False,ALXN,Unknown
+AMAT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Applied Materials,Information Technology
+AMCR,2637,2016-01-04,2026-06-30,0,44,0,yahoo,2738,0.9631,False,True,Amcor,Materials
+AMD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Advanced Micro Devices,Information Technology
+AME,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ametek,Industrials
+AMG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AMG,Unknown
+AMGN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Amgen,Health Care
+AMP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ameriprise Financial,Financials
+AMT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,American Tower,Real Estate
+AMTM,442,2024-09-24,2026-06-30,0,0,0,yahoo,2738,0.1614,True,False,AMTM,Unknown
+AMZN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Amazon,Consumer Discretionary
+AN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AN,Unknown
+ANDV,691,2016-01-04,2018-09-28,0,0,0,tiingo,2738,0.2524,True,False,ANDV,Unknown
+ANET,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Arista Networks,Information Technology
+ANSS,2494,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9109,False,False,ANSS,Unknown
+AON,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Aon plc,Financials
+AOS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,A. O. Smith,Industrials
+APA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,APA Corporation,Energy
+APC,95,2026-02-12,2026-06-30,0,0,0,yahoo,2738,0.0347,True,False,APC,Unknown
+APD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Air Products,Materials
+APH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Amphenol,Information Technology
+APO,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Apollo Global Management,Financials
+APP,1308,2021-04-15,2026-06-30,0,0,0,yahoo,2738,0.4777,True,False,AppLovin,Information Technology
+APTV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Aptiv,Consumer Discretionary
+ARE,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Alexandria Real Estate Equities,Real Estate
+ARES,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,Ares Management,Financials
+ARG,103,2016-01-04,2016-05-31,0,0,0,tiingo,2738,0.0376,True,False,ARG,Unknown
+ARNC,851,2020-04-01,2023-08-17,0,0,0,tiingo,2738,0.3108,True,False,ARNC,Unknown
+ATO,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Atmos Energy,Utilities
+ATVI,1959,2016-01-04,2023-10-13,0,0,0,tiingo,2738,0.7155,True,False,ATVI,Unknown
+AVB,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,AvalonBay Communities,Real Estate
+AVGO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Broadcom,Information Technology
+AVY,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Avery Dennison,Materials
+AWK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,American Water Works,Utilities
+AXON,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Axon Enterprise,Industrials
+AXP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,American Express,Financials
+AYI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AYI,Unknown
+AZO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,AutoZone,Consumer Discretionary
+BA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Boeing,Industrials
+BAC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bank of America,Financials
+BALL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ball Corporation,Materials
+BAX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Baxter International,Health Care
+BBT,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,BBT,Unknown
+BBWI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,BBWI,Unknown
+BBY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Best Buy,Consumer Discretionary
+BCR,503,2016-01-04,2017-12-29,0,0,0,tiingo,2738,0.1837,True,False,BCR,Unknown
+BDX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Becton Dickinson,Health Care
+BEN,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Franklin Resources,Financials
+BF-B,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Brown–Forman,Consumer Staples
+BG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bunge Global,Consumer Staples
+BHF,2251,2017-07-17,2026-06-30,0,0,0,yahoo,2738,0.8221,True,False,BHF,Unknown
+BHGE,2259,2017-07-05,2026-06-30,0,0,0,tiingo,2738,0.8251,True,False,BHGE,Unknown
+BIIB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Biogen,Health Care
+BIO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,BIO,Unknown
+BKNG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Booking Holdings,Consumer Discretionary
+BKR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Baker Hughes,Energy
+BLDR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Builders FirstSource,Industrials
+BLK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,BlackRock,Financials
+BMY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bristol Myers Squibb,Health Care
+BNY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,BNY Mellon,Financials
+BR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Broadridge Financial Solutions,Industrials
+BRCM,26,2016-01-04,2016-02-09,0,0,0,tiingo,2738,0.0095,True,False,BRCM,Unknown
+BRK-B,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Berkshire Hathaway,Financials
+BRO,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Brown & Brown,Financials
+BSX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Boston Scientific,Health Care
+BWA,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,BWA,Unknown
+BX,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Blackstone Inc.,Financials
+BXLT,114,2016-01-04,2016-06-16,0,0,0,tiingo,2738,0.0416,True,False,BXLT,Unknown
+BXP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"BXP, Inc.",Real Estate
+C,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Citigroup,Financials
+CA,636,2023-12-14,2026-06-30,0,0,0,tiingo,2738,0.2323,True,False,CA,Unknown
+CAG,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,CAG,Unknown
+CAH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cardinal Health,Health Care
+CAM,184,2025-10-06,2026-06-30,0,0,0,yahoo,2738,0.0672,True,False,CAM,Unknown
+CARR,1578,2020-03-19,2026-06-30,0,0,0,yahoo,2738,0.5763,True,False,Carrier Global,Industrials
+CASY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Casey's,Consumer Staples
+CAT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Caterpillar Inc.,Industrials
+CB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Chubb Limited,Financials
+CBOE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cboe Global Markets,Financials
+CBRE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CBRE Group,Real Estate
+CCEP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CCEP,Unknown
+CCI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Crown Castle,Real Estate
+CCL,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Carnival Corporation,Consumer Discretionary
+CDNS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cadence Design Systems,Information Technology
+CDW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CDW Corporation,Information Technology
+CE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CE,Unknown
+CEG,1115,2022-01-19,2026-06-30,0,0,0,yahoo,2738,0.4072,True,False,Constellation Energy,Utilities
+CELG,980,2016-01-04,2019-11-22,0,0,0,tiingo,2738,0.3579,True,False,CELG,Unknown
+CERN,1638,2016-01-04,2022-09-08,0,0,0,tiingo,2738,0.5982,True,False,CERN,Unknown
+CF,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CF Industries,Materials
+CFG,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Citizens Financial Group,Financials
+CHD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Church & Dwight,Consumer Staples
+CHK,1299,2016-01-04,2024-10-04,0,0,0,tiingo,2738,0.4744,True,False,CHK,Unknown
+CHRW,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,C.H. Robinson,Industrials
+CHTR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Charter Communications,Communication Services
+CI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cigna,Health Care
+CIEN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ciena,Information Technology
+CINF,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Cincinnati Financial,Financials
+CL,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Colgate-Palmolive,Consumer Staples
+CLX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Clorox,Consumer Staples
+CMA,2534,2016-01-04,2026-01-30,0,0,0,tiingo,2738,0.9255,False,False,CMA,Unknown
+CMCSA,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Comcast,Communication Services
+CME,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,CME Group,Financials
+CMG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Chipotle Mexican Grill,Consumer Discretionary
+CMI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cummins,Industrials
+CMS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CMS Energy,Utilities
+CNC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Centene Corporation,Health Care
+CNP,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,CenterPoint Energy,Utilities
+CNX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CNX,Unknown
+COF,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Capital One,Financials
+COHR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Coherent Corp.,Information Technology
+COIN,1309,2021-04-14,2026-06-30,0,0,0,yahoo,2738,0.4781,True,False,Coinbase,Financials
+COL,731,2016-01-04,2018-11-26,0,0,0,tiingo,2738,0.267,True,False,COL,Unknown
+COO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cooper Companies (The),Health Care
+COP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ConocoPhillips,Energy
+COR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cencora,Health Care
+COST,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Costco,Consumer Staples
+COTY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,COTY,Unknown
+CPAY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Corpay,Financials
+CPB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CPB,Unknown
+CPGX,126,2016-01-04,2016-07-01,0,0,0,tiingo,2738,0.046,True,False,CPGX,Unknown
+CPRI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CPRI,Unknown
+CPRT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Copart,Industrials
+CPT,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Camden Property Trust,Real Estate
+CRH,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,CRH plc,Materials
+CRL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Charles River Laboratories,Health Care
+CRM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Salesforce,Information Technology
+CRWD,1772,2019-06-12,2026-06-30,0,0,0,yahoo,2738,0.6472,True,False,CrowdStrike,Information Technology
+CSCO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cisco,Information Technology
+CSGP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CoStar Group,Real Estate
+CSX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CSX Corporation,Industrials
+CTAS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Cintas,Industrials
+CTLT,2256,2016-01-04,2024-12-18,0,0,0,tiingo,2738,0.824,False,False,CTLT,Unknown
+CTRA,2600,2016-01-04,2026-05-06,0,0,0,tiingo,2738,0.9496,False,False,CTRA,Unknown
+CTSH,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Cognizant,Information Technology
+CTVA,1784,2019-05-24,2026-06-30,0,0,0,yahoo,2738,0.6516,True,False,Corteva,Materials
+CTXS,1705,2016-01-04,2022-11-02,0,0,0,tiingo,2738,0.6227,True,False,CTXS,Unknown
+CVC,106,2016-01-04,2016-06-21,0,0,0,tiingo,2738,0.0387,True,False,CVC,Unknown
+CVNA,2305,2017-04-28,2026-06-30,0,0,0,yahoo,2738,0.8419,True,False,Carvana,Consumer Discretionary
+CVS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CVS Health,Health Care
+CVX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Chevron Corporation,Energy
+CXO,1269,2016-01-04,2021-01-15,0,0,0,tiingo,2738,0.4635,True,False,CXO,Unknown
+CZR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,CZR,Unknown
+D,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Dominion Energy,Utilities
+DAL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Delta Air Lines,Industrials
+DASH,1394,2020-12-09,2026-06-30,0,0,0,yahoo,2738,0.5091,True,False,DoorDash,Consumer Discretionary
+DAY,1954,2018-04-26,2026-02-03,0,0,0,tiingo,2738,0.7137,True,False,DAY,Unknown
+DD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,DuPont,Materials
+DDOG,1703,2019-09-19,2026-06-30,0,0,0,yahoo,2738,0.622,True,False,Datadog,Information Technology
+DE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Deere & Company,Industrials
+DECK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Deckers Brands,Consumer Discretionary
+DELL,2480,2016-08-17,2026-06-30,0,0,0,yahoo,2738,0.9058,True,False,Dell Technologies,Information Technology
+DFS,2357,2016-01-04,2025-05-16,0,0,0,tiingo,2738,0.8608,False,False,DFS,Unknown
+DG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Dollar General,Consumer Staples
+DGX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Quest Diagnostics,Health Care
+DHI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,D. R. Horton,Consumer Discretionary
+DHR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Danaher Corporation,Health Care
+DIS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Walt Disney Company (The),Communication Services
+DISCA,29,2022-04-06,2022-09-16,0,0,0,tiingo,2738,0.0106,True,False,DISCA,Unknown
+DISCK,1604,2016-01-04,2022-09-16,0,0,0,tiingo,2738,0.5858,True,False,DISCK,Unknown
+DISH,2014,2016-01-04,2024-01-09,0,0,0,tiingo,2738,0.7356,True,False,DISH,Unknown
+DLR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Digital Realty,Real Estate
+DLTR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Dollar Tree,Consumer Staples
+DNB,1294,2020-07-01,2025-08-25,0,0,0,tiingo,2738,0.4726,True,False,DNB,Unknown
+DO,611,2022-03-30,2024-09-04,0,0,0,tiingo,2738,0.2232,True,False,DO,Unknown
+DOC,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Healthpeak Properties,Real Estate
+DOV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Dover Corporation,Industrials
+DOW,1830,2019-03-20,2026-06-30,0,0,0,yahoo,2738,0.6684,True,False,Dow Inc.,Materials
+DPZ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Domino's,Consumer Discretionary
+DRE,1700,2016-01-04,2022-10-03,0,0,0,tiingo,2738,0.6209,True,False,DRE,Unknown
+DRI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Darden Restaurants,Consumer Discretionary
+DTE,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,DTE Energy,Utilities
+DUK,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Duke Energy,Utilities
+DVA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,DaVita,Health Care
+DVN,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Devon Energy,Energy
+DWDP,442,2017-08-03,2019-05-31,0,0,0,tiingo,2738,0.1614,True,False,DWDP,Unknown
+DXC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,DXC,Unknown
+DXCM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Dexcom,Health Care
+EA,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,Electronic Arts,Communication Services
+EBAY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,eBay Inc.,Consumer Discretionary
+ECHO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,EchoStar,Communication Services
+ECL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ecolab,Materials
+ED,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Consolidated Edison,Utilities
+EFX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Equifax,Industrials
+EG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Everest Group,Financials
+EIX,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Edison International,Utilities
+EL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Estée Lauder Companies (The),Consumer Staples
+ELV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Elevance Health,Health Care
+EMC,784,2023-05-15,2026-06-30,0,0,0,yahoo,2738,0.2863,True,False,EMC,Unknown
+EME,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Emcor,Industrials
+EMN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,EMN,Unknown
+EMR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Emerson Electric,Industrials
+ENPH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ENPH,Unknown
+EOG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,EOG Resources,Energy
+EPAM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,EPAM,Unknown
+EQIX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Equinix,Real Estate
+EQT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,EQT Corporation,Energy
+ERIE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Erie Indemnity,Financials
+ES,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Eversource Energy,Utilities
+ESRX,748,2016-01-04,2018-12-20,0,0,0,tiingo,2738,0.2732,True,False,ESRX,Unknown
+ESS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Essex Property Trust,Real Estate
+ETFC,1197,2016-01-04,2020-10-02,0,0,0,tiingo,2738,0.4372,True,False,ETFC,Unknown
+ETN,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Eaton Corporation,Industrials
+ETR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Entergy,Utilities
+ETSY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ETSY,Unknown
+EVHC,742,2016-01-04,2018-12-14,0,0,0,tiingo,2738,0.271,True,False,EVHC,Unknown
+EVRG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Evergy,Utilities
+EW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Edwards Lifesciences,Health Care
+EXC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Exelon,Utilities
+EXE,1352,2021-02-10,2026-06-30,0,0,0,yahoo,2738,0.4938,True,False,Expand Energy,Energy
+EXPD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Expeditors International,Industrials
+EXPE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Expedia Group,Consumer Discretionary
+EXR,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Extra Space Storage,Real Estate
+F,2637,2016-01-04,2026-06-30,0,5,0,yahoo,2738,0.9631,False,True,Ford Motor Company,Consumer Discretionary
+FANG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Diamondback Energy,Energy
+FAST,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Fastenal,Industrials
+FBIN,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,FBIN,Unknown
+FCX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Freeport-McMoRan,Materials
+FDS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FactSet,Financials
+FDX,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,FedEx,Industrials
+FDXF,24,2026-05-27,2026-06-30,0,0,0,yahoo,2738,0.0088,True,False,FedEx Freight,Industrials
+FE,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,FirstEnergy,Utilities
+FFIV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"F5, Inc.",Information Technology
+FI,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,Fiserv,Financials
+FICO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Fair Isaac,Information Technology
+FIS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Fidelity National Information Services,Financials
+FITB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Fifth Third Bancorp,Financials
+FIX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Comfort Systems USA,Industrials
+FL,2530,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.924,False,False,FL,Unknown
+FLEX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Flex Ltd.,Information Technology
+FLIR,1351,2016-01-04,2021-05-14,0,0,0,tiingo,2738,0.4934,True,False,FLIR,Unknown
+FLR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FLR,Unknown
+FLS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FLS,Unknown
+FMC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FMC,Unknown
+FOSL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FOSL,Unknown
+FOX,1835,2019-03-13,2026-06-30,0,0,0,yahoo,2738,0.6702,True,False,Fox Corporation (Class B),Communication Services
+FOXA,1836,2019-03-12,2026-06-30,0,0,0,yahoo,2738,0.6706,True,False,Fox Corporation (Class A),Communication Services
+FRT,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Federal Realty Investment Trust,Real Estate
+FSLR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,First Solar,Information Technology
+FTI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FTI,Unknown
+FTNT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Fortinet,Information Technology
+FTR,279,2020-04-23,2021-06-01,0,0,0,tiingo,2738,0.1019,True,False,FTR,Unknown
+FTV,2511,2016-07-05,2026-06-30,0,0,0,yahoo,2738,0.9171,True,False,Fortive,Industrials
+GAP,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,GAP,Unknown
+GAS,126,2016-01-04,2016-07-01,0,0,0,tiingo,2738,0.046,True,False,GAS,Unknown
+GD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,General Dynamics,Industrials
+GDDY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,GoDaddy,Information Technology
+GE,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,GE Aerospace,Industrials
+GEHC,886,2022-12-15,2026-06-30,0,0,0,yahoo,2738,0.3236,True,False,GE HealthCare,Health Care
+GEN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Gen Digital,Information Technology
+GEV,566,2024-03-27,2026-06-30,0,0,0,yahoo,2738,0.2067,True,False,GE Vernova,Industrials
+GGP,669,2016-01-04,2018-08-28,0,0,0,tiingo,2738,0.2443,True,False,GGP,Unknown
+GILD,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Gilead Sciences,Health Care
+GIS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,General Mills,Consumer Staples
+GL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Globe Life,Financials
+GLW,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Corning Inc.,Information Technology
+GM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,General Motors,Consumer Discretionary
+GMCR,43,2016-01-04,2016-03-04,0,0,0,tiingo,2738,0.0157,True,False,GMCR,Unknown
+GME,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,GME,Unknown
+GNRC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Generac,Industrials
+GOOG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Alphabet Inc. (Class C),Communication Services
+GOOGL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Alphabet Inc. (Class A),Communication Services
+GPC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Genuine Parts Company,Consumer Discretionary
+GPN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Global Payments,Financials
+GRMN,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Garmin,Consumer Discretionary
+GS,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Goldman Sachs,Financials
+GT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,GT,Unknown
+GWW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,W. W. Grainger,Industrials
+HAL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Halliburton,Energy
+HAR,299,2016-01-04,2017-03-10,0,0,0,tiingo,2738,0.1092,True,False,HAR,Unknown
+HAS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Hasbro,Consumer Discretionary
+HBAN,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Huntington Bancshares,Financials
+HBI,2589,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9456,False,False,HBI,Unknown
+HCA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,HCA Healthcare,Health Care
+HCP,807,2021-12-09,2025-02-27,0,0,0,tiingo,2738,0.2947,True,False,HCP,Unknown
+HD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Home Depot (The),Consumer Discretionary
+HES,2399,2016-01-04,2025-07-18,0,0,0,tiingo,2738,0.8762,False,False,HES,Unknown
+HIG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Hartford (The),Financials
+HII,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Huntington Ingalls Industries,Industrials
+HLT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Hilton Worldwide,Consumer Discretionary
+HOG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,HOG,Unknown
+HOLX,2579,2016-01-04,2026-04-07,0,0,0,tiingo,2738,0.9419,False,False,HOLX,Unknown
+HON,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Honeywell Technologies,Industrials
+HOOD,1235,2021-07-29,2026-06-30,0,0,0,yahoo,2738,0.4511,True,False,Robinhood Markets,Financials
+HOT,190,2016-01-04,2016-10-03,0,0,0,tiingo,2738,0.0694,True,False,HOT,Unknown
+HP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,HP,Unknown
+HPE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Hewlett Packard Enterprise,Information Technology
+HPQ,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,HP Inc.,Information Technology
+HRB,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,HRB,Unknown
+HRL,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Hormel Foods,Consumer Staples
+HRS,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,HRS,Unknown
+HSIC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Henry Schein,Health Care
+HST,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Host Hotels & Resorts,Real Estate
+HSY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Hershey Company (The),Consumer Staples
+HUBB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Hubbell Incorporated,Industrials
+HUM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Humana,Health Care
+HWM,2427,2016-11-01,2026-06-30,0,0,0,yahoo,2738,0.8864,True,False,Howmet Aerospace,Industrials
+IBKR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Interactive Brokers,Financials
+IBM,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,IBM,Information Technology
+ICE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Intercontinental Exchange,Financials
+IDXX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Idexx Laboratories,Health Care
+IEX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,IDEX Corporation,Industrials
+IFF,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,International Flavors & Fragrances,Materials
+ILMN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ILMN,Unknown
+INCY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Incyte,Health Care
+INFO,430,2024-10-10,2026-06-30,0,0,0,yahoo,2738,0.157,True,False,INFO,Unknown
+INTC,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Intel,Information Technology
+INTU,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Intuit,Information Technology
+INVH,2365,2017-02-01,2026-06-30,0,0,0,yahoo,2738,0.8638,True,False,Invitation Homes,Real Estate
+IP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,International Paper,Materials
+IPG,2491,2016-01-04,2025-11-26,0,0,0,tiingo,2738,0.9098,False,False,IPG,Unknown
+IPGP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,IPGP,Unknown
+IQV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,IQVIA,Health Care
+IR,2295,2017-05-12,2026-06-30,0,0,0,yahoo,2738,0.8382,True,False,Ingersoll Rand,Industrials
+IRM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Iron Mountain,Real Estate
+ISRG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Intuitive Surgical,Health Care
+IT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Gartner,Information Technology
+ITW,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Illinois Tool Works,Industrials
+IVZ,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Invesco,Financials
+J,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Jacobs Solutions,Industrials
+JBHT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,J.B. Hunt,Industrials
+JBL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Jabil,Information Technology
+JCI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Johnson Controls,Industrials
+JEF,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,JEF,Unknown
+JKHY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Jack Henry & Associates,Financials
+JNJ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Johnson & Johnson,Health Care
+JPM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,JPMorgan Chase,Financials
+JWN,2359,2016-01-04,2025-05-20,0,0,0,tiingo,2738,0.8616,False,False,JWN,Unknown
+K,2501,2016-01-04,2025-12-11,0,0,0,tiingo,2738,0.9134,False,False,K,Unknown
+KDP,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Keurig Dr Pepper,Consumer Staples
+KEY,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,KeyCorp,Financials
+KEYS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Keysight Technologies,Information Technology
+KHC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Kraft Heinz,Consumer Staples
+KIM,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Kimco Realty,Real Estate
+KKR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,KKR & Co.,Financials
+KLAC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,KLA Corporation,Information Technology
+KMB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Kimberly-Clark,Consumer Staples
+KMI,2637,2016-01-04,2026-06-30,0,6,0,yahoo,2738,0.9631,False,True,Kinder Morgan,Energy
+KMX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,KMX,Unknown
+KO,2637,2016-01-04,2026-06-30,0,6,0,yahoo,2738,0.9631,False,True,Coca-Cola Company (The),Consumer Staples
+KORS,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,KORS,Unknown
+KR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Kroger,Consumer Staples
+KSS,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,KSS,Unknown
+KSU,1498,2016-01-04,2021-12-13,0,0,0,tiingo,2738,0.5471,True,False,KSU,Unknown
+KVUE,791,2023-05-04,2026-06-30,0,0,0,yahoo,2738,0.2889,True,False,Kenvue,Consumer Staples
+L,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Loews Corporation,Financials
+LB,502,2024-06-28,2026-06-30,0,0,0,yahoo,2738,0.1833,True,False,LB,Unknown
+LDOS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Leidos,Industrials
+LEG,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,LEG,Unknown
+LEN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lennar,Consumer Discretionary
+LH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Labcorp,Health Care
+LHX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,L3Harris,Industrials
+LII,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lennox International,Industrials
+LIN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Linde plc,Materials
+LITE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lumentum,Information Technology
+LKQ,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,LKQ,Unknown
+LLL,878,2016-01-04,2019-06-28,0,0,0,tiingo,2738,0.3207,True,False,LLL,Unknown
+LLTC,304,2016-01-04,2017-03-20,0,0,0,tiingo,2738,0.111,True,False,LLTC,Unknown
+LLY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lilly (Eli),Health Care
+LM,1153,2016-01-04,2020-07-31,0,0,0,tiingo,2738,0.4211,True,False,LM,Unknown
+LMT,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Lockheed Martin,Industrials
+LNC,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,LNC,Unknown
+LNT,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Alliant Energy,Utilities
+LOW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lowe's,Consumer Discretionary
+LRCX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lam Research,Information Technology
+LULU,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lululemon Athletica,Consumer Discretionary
+LUMN,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,LUMN,Unknown
+LUV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Southwest Airlines,Industrials
+LVLT,463,2016-01-04,2017-11-01,0,0,0,tiingo,2738,0.1691,True,False,LVLT,Unknown
+LVS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Las Vegas Sands,Consumer Discretionary
+LW,2420,2016-11-10,2026-06-30,0,0,0,yahoo,2738,0.8839,True,False,LW,Unknown
+LYB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,LyondellBasell,Materials
+LYV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Live Nation Entertainment,Communication Services
+M,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,M,Unknown
+MA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Mastercard,Financials
+MAA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Mid-America Apartment Communities,Real Estate
+MAC,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,MAC,Unknown
+MAR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Marriott International,Consumer Discretionary
+MAS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Masco,Industrials
+MAT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MAT,Unknown
+MCD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,McDonald's,Consumer Discretionary
+MCHP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Microchip Technology,Information Technology
+MCK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,McKesson Corporation,Health Care
+MCO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Moody's Corporation,Financials
+MDLZ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Mondelez International,Consumer Staples
+MDT,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Medtronic,Health Care
+MET,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,MetLife,Financials
+META,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Meta Platforms,Communication Services
+MGM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MGM Resorts,Consumer Discretionary
+MHK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MHK,Unknown
+MJN,384,2016-01-04,2017-07-14,0,0,0,tiingo,2738,0.1402,True,False,MJN,Unknown
+MKC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,McCormick & Company,Consumer Staples
+MKTX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MKTX,Unknown
+MLM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Martin Marietta Materials,Materials
+MMM,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,3M,Industrials
+MNST,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Monster Beverage,Consumer Staples
+MO,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Altria,Consumer Staples
+MOH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MOH,Unknown
+MON,450,2021-03-16,2022-12-23,0,0,0,tiingo,2738,0.1644,True,False,MON,Unknown
+MOS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Mosaic Company (The),Materials
+MPC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Marathon Petroleum,Energy
+MPWR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Monolithic Power Systems,Information Technology
+MRK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Merck & Co.,Health Care
+MRNA,1899,2018-12-07,2026-06-30,0,0,0,yahoo,2738,0.6936,True,False,Moderna,Health Care
+MRO,2239,2016-01-04,2024-11-22,0,0,0,tiingo,2738,0.8178,False,False,MRO,Unknown
+MRSH,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Marsh McLennan,Financials
+MRVL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Marvell Technology,Information Technology
+MS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Morgan Stanley,Financials
+MSCI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MSCI Inc.,Financials
+MSFT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Microsoft,Information Technology
+MSI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Motorola Solutions,Information Technology
+MTB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,M&T Bank,Financials
+MTCH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MTCH,Unknown
+MTD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Mettler Toledo,Health Care
+MU,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Micron Technology,Information Technology
+MUR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MUR,Unknown
+MXIM,1427,2016-01-04,2021-09-01,0,0,0,tiingo,2738,0.5212,True,False,MXIM,Unknown
+MYL,1229,2016-01-04,2020-11-19,0,0,0,tiingo,2738,0.4489,True,False,MYL,Unknown
+NAVI,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,NAVI,Unknown
+NBL,1199,2016-01-04,2020-10-06,0,0,0,tiingo,2738,0.4379,True,False,NBL,Unknown
+NCLH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Norwegian Cruise Line Holdings,Consumer Discretionary
+NDAQ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Nasdaq, Inc.",Financials
+NDSN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Nordson Corporation,Industrials
+NEE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NextEra Energy,Utilities
+NEM,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Newmont,Materials
+NFLX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Netflix,Communication Services
+NI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NiSource,Utilities
+NKE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Nike, Inc.",Consumer Discretionary
+NKTR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NKTR,Unknown
+NLSN,1706,2016-01-04,2022-10-11,0,0,0,tiingo,2738,0.6231,True,False,NLSN,Unknown
+NOC,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Northrop Grumman,Industrials
+NOV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NOV,Unknown
+NOW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ServiceNow,Information Technology
+NRG,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,NRG Energy,Utilities
+NSC,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Norfolk Southern,Industrials
+NTAP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NetApp,Information Technology
+NTRS,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Northern Trust,Financials
+NUE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Nucor,Materials
+NVDA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Nvidia,Information Technology
+NVR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"NVR, Inc.",Consumer Discretionary
+NWL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NWL,Unknown
+NWS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,News Corp (Class B),Communication Services
+NWSA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,News Corp (Class A),Communication Services
+NXPI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,NXP Semiconductors,Information Technology
+O,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Realty Income,Real Estate
+ODFL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Old Dominion,Industrials
+OGN,1287,2021-05-14,2026-06-30,0,0,0,yahoo,2738,0.4701,True,False,OGN,Unknown
+OI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,OI,Unknown
+OKE,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Oneok,Energy
+OMC,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Omnicom Group,Communication Services
+ON,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ON Semiconductor,Information Technology
+ORCL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Oracle Corporation,Information Technology
+ORLY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,O’Reilly Automotive,Consumer Discretionary
+OTIS,1578,2020-03-19,2026-06-30,0,0,0,yahoo,2738,0.5763,True,False,Otis Worldwide,Industrials
+OXY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Occidental Petroleum,Energy
+PANW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Palo Alto Networks,Information Technology
+PAYC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PAYC,Unknown
+PAYX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Paychex,Industrials
+PBCT,1575,2016-01-04,2022-04-04,0,0,0,tiingo,2738,0.5752,True,False,PBCT,Unknown
+PBI,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,PBI,Unknown
+PCAR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Paccar,Industrials
+PCG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PG&E Corporation,Utilities
+PCL,227,2025-08-05,2026-06-30,0,0,0,yahoo,2738,0.0829,True,False,PCL,Unknown
+PCP,25,2016-01-04,2016-02-08,0,0,0,tiingo,2738,0.0091,True,False,PCP,Unknown
+PDCO,2337,2016-01-04,2025-04-17,0,0,0,tiingo,2738,0.8535,False,False,PDCO,Unknown
+PEG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Public Service Enterprise Group,Utilities
+PENN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PENN,Unknown
+PEP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PepsiCo,Consumer Staples
+PFE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Pfizer,Health Care
+PFG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Principal Financial Group,Financials
+PG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Procter & Gamble,Consumer Staples
+PGR,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Progressive Corporation,Financials
+PH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Parker Hannifin,Industrials
+PHM,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,PulteGroup,Consumer Discretionary
+PKG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Packaging Corporation of America,Materials
+PLD,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Prologis,Real Estate
+PLTR,1443,2020-09-30,2026-06-30,0,0,0,yahoo,2738,0.527,True,False,Palantir Technologies,Information Technology
+PM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Philip Morris International,Consumer Staples
+PNC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PNC Financial Services,Financials
+PNR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Pentair,Industrials
+PNW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Pinnacle West Capital,Utilities
+PODD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Insulet Corporation,Health Care
+POM,182,2025-10-08,2026-06-30,0,0,0,yahoo,2738,0.0665,True,False,POM,Unknown
+POOL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,POOL,Unknown
+PPG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PPG Industries,Materials
+PPL,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,PPL Corporation,Utilities
+PRGO,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,PRGO,Unknown
+PRU,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Prudential Financial,Financials
+PSA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Public Storage,Real Estate
+PSKY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Paramount Skydance Corporation,Communication Services
+PSX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Phillips 66,Energy
+PTC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PTC Inc.,Information Technology
+PVH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PVH,Unknown
+PWR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Quanta Services,Industrials
+PX,713,2016-01-04,2018-10-30,0,0,0,tiingo,2738,0.2604,True,False,PX,Unknown
+PXD,2098,2016-01-04,2024-05-03,0,0,0,tiingo,2738,0.7663,True,False,PXD,Unknown
+PYPL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,PayPal,Financials
+Q,169,2025-10-27,2026-06-30,0,0,0,yahoo,2738,0.0617,True,False,Qnity Electronics,Information Technology
+QCOM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Qualcomm,Information Technology
+QRVO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,QRVO,Unknown
+R,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,R,Unknown
+RAI,410,2016-01-04,2017-08-17,0,0,0,tiingo,2738,0.1497,True,False,RAI,Unknown
+RCL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Royal Caribbean Group,Consumer Discretionary
+REG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Regency Centers,Real Estate
+REGN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Regeneron Pharmaceuticals,Health Care
+RF,2637,2016-01-04,2026-06-30,0,6,0,yahoo,2738,0.9631,False,True,Regions Financial Corporation,Financials
+RHI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,RHI,Unknown
+RHT,883,2016-01-04,2019-07-08,0,0,0,tiingo,2738,0.3225,True,False,RHT,Unknown
+RIG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,RIG,Unknown
+RJF,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Raymond James Financial,Financials
+RL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ralph Lauren Corporation,Consumer Discretionary
+RMD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ResMed,Health Care
+ROK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Rockwell Automation,Industrials
+ROL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Rollins, Inc.",Industrials
+ROP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Roper Technologies,Information Technology
+ROST,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ross Stores,Consumer Discretionary
+RRC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,RRC,Unknown
+RSG,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Republic Services,Industrials
+RTN,1071,2016-01-04,2020-04-03,0,0,0,tiingo,2738,0.3912,True,False,RTN,Unknown
+RTX,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,RTX Corporation,Industrials
+RVTY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Revvity,Health Care
+SATS,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,SATS,Unknown
+SBAC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,SBA Communications,Real Estate
+SBNY,469,2024-08-15,2026-06-30,0,0,0,yahoo,2738,0.1713,True,False,SBNY,Unknown
+SBUX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Starbucks,Consumer Discretionary
+SCG,754,2016-01-04,2018-12-31,0,0,0,tiingo,2738,0.2754,True,False,SCG,Unknown
+SCHW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Charles Schwab Corporation,Financials
+SE,2183,2017-10-20,2026-06-30,0,0,0,yahoo,2738,0.7973,True,False,SE,Unknown
+SEDG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,SEDG,Unknown
+SEE,2581,2016-01-04,2026-04-09,0,0,0,tiingo,2738,0.9427,False,False,SEE,Unknown
+SHW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Sherwin-Williams,Materials
+SIG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,SIG,Unknown
+SIVB,2321,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.8477,False,False,SIVB,Unknown
+SJM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,J.M. Smucker Company (The),Consumer Staples
+SLB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Schlumberger,Energy
+SLG,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,SLG,Unknown
+SMCI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Supermicro,Information Technology
+SNA,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Snap-on,Industrials
+SNDK,345,2025-02-13,2026-06-30,0,0,0,yahoo,2738,0.126,True,False,Sandisk,Information Technology
+SNI,555,2016-01-04,2018-03-16,0,0,0,tiingo,2738,0.2027,True,False,SNI,Unknown
+SNPS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Synopsys,Information Technology
+SO,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Southern Company,Utilities
+SOLS,174,2025-10-20,2026-06-30,0,0,0,yahoo,2738,0.0636,True,False,SOLS,Unknown
+SOLV,567,2024-03-26,2026-06-30,0,0,0,yahoo,2738,0.2071,True,False,Solventum,Health Care
+SPG,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Simon Property Group,Real Estate
+SPGI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,S&P Global,Financials
+SPLS,113,2026-01-16,2026-06-30,0,0,0,yahoo,2738,0.0413,True,False,SPLS,Unknown
+SRCL,2225,2016-01-04,2024-11-04,0,0,0,tiingo,2738,0.8126,False,False,SRCL,Unknown
+SRE,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Sempra,Utilities
+STE,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Steris,Health Care
+STI,1044,2022-05-02,2026-06-30,0,0,0,yahoo,2738,0.3813,True,False,STI,Unknown
+STJ,263,2016-01-04,2017-01-18,0,0,0,tiingo,2738,0.0961,True,False,STJ,Unknown
+STLD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Steel Dynamics,Materials
+STT,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,State Street Corporation,Financials
+STX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Seagate Technology,Information Technology
+STZ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Constellation Brands,Consumer Staples
+SW,2637,2016-01-04,2026-06-30,0,78,0,yahoo,2738,0.9631,False,True,Smurfit Westrock,Materials
+SWK,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Stanley Black & Decker,Industrials
+SWKS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Skyworks Solutions,Information Technology
+SWN,2201,2016-01-04,2024-10-01,0,0,0,tiingo,2738,0.8039,False,False,SWN,Unknown
+SYF,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Synchrony Financial,Financials
+SYK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Stryker Corporation,Health Care
+SYMC,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,SYMC,Unknown
+SYY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Sysco,Consumer Staples
+T,2637,2016-01-04,2026-06-30,0,6,0,yahoo,2738,0.9631,False,True,AT&T,Communication Services
+TAP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Molson Coors Beverage Company,Consumer Staples
+TDC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TDC,Unknown
+TDG,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,TransDigm Group,Industrials
+TDY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Teledyne Technologies,Information Technology
+TE,1625,2020-01-10,2026-06-30,0,0,0,yahoo,2738,0.5935,True,False,TE,Unknown
+TECH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bio-Techne,Health Care
+TEL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TE Connectivity,Information Technology
+TER,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Teradyne,Information Technology
+TFC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Truist Financial,Financials
+TFX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TFX,Unknown
+TGNA,2568,2016-01-04,2026-03-20,0,0,0,tiingo,2738,0.9379,False,False,TGNA,Unknown
+TGT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Target Corporation,Consumer Staples
+THC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,THC,Unknown
+TIF,1264,2016-01-04,2021-01-08,0,0,0,tiingo,2738,0.4617,True,False,TIF,Unknown
+TJX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TJX Companies,Consumer Discretionary
+TKO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TKO Group Holdings,Communication Services
+TMO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Thermo Fisher Scientific,Health Care
+TMUS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,T-Mobile US,Communication Services
+TPL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Texas Pacific Land Corporation,Energy
+TPR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Tapestry, Inc.",Consumer Discretionary
+TRGP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Targa Resources,Energy
+TRIP,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,TRIP,Unknown
+TRMB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Trimble Inc.,Information Technology
+TROW,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,T. Rowe Price,Financials
+TRV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Travelers Companies (The),Financials
+TSCO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Tractor Supply,Consumer Discretionary
+TSLA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Tesla, Inc.",Consumer Discretionary
+TSN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Tyson Foods,Consumer Staples
+TSS,933,2016-01-04,2019-09-17,0,0,0,tiingo,2738,0.3408,True,False,TSS,Unknown
+TT,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Trane Technologies,Industrials
+TTD,2456,2016-09-21,2026-06-30,0,0,0,yahoo,2738,0.897,True,False,Trade Desk (The),Communication Services
+TTWO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Take-Two Interactive,Communication Services
+TWC,101,2016-01-04,2016-05-26,0,0,0,tiingo,2738,0.0369,True,False,TWC,Unknown
+TWTR,1719,2016-01-04,2022-10-28,0,0,0,tiingo,2738,0.6278,True,False,TWTR,Unknown
+TWX,618,2016-01-04,2018-06-15,0,0,0,tiingo,2738,0.2257,True,False,TWX,Unknown
+TXN,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Texas Instruments,Information Technology
+TXT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Textron,Industrials
+TYL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Tyler Technologies,Information Technology
+UA,2582,2016-03-23,2026-06-30,0,1,0,yahoo,2738,0.943,True,True,UA,Unknown
+UAA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,UAA,Unknown
+UAL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,United Airlines Holdings,Industrials
+UBER,1794,2019-05-10,2026-06-30,0,0,0,yahoo,2738,0.6552,True,False,Uber,Industrials
+UDR,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,"UDR, Inc.",Real Estate
+UHS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Universal Health Services,Health Care
+ULTA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ulta Beauty,Consumer Discretionary
+UNH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,UnitedHealth Group,Health Care
+UNM,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,UNM,Unknown
+UNP,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Union Pacific Corporation,Industrials
+UPS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,United Parcel Service,Industrials
+URBN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,URBN,Unknown
+URI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,United Rentals,Industrials
+USB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,U.S. Bancorp,Financials
+UTX,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,UTX,Unknown
+V,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Visa Inc.,Financials
+VAR,1331,2016-01-04,2021-04-16,0,0,0,tiingo,2738,0.4861,True,False,VAR,Unknown
+VEEV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Veeva Systems,Health Care
+VFC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,VFC,Unknown
+VIAB,988,2016-01-04,2019-12-04,0,0,0,tiingo,2738,0.3608,True,False,VIAB,Unknown
+VICI,2134,2018-01-02,2026-06-30,0,4,0,yahoo,2738,0.7794,True,True,Vici Properties,Real Estate
+VLO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Valero Energy,Energy
+VLTO,686,2023-10-04,2026-06-30,0,0,0,yahoo,2738,0.2505,True,False,Veralto,Industrials
+VMC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Vulcan Materials Company,Materials
+VNO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,VNO,Unknown
+VNT,1447,2020-09-24,2026-06-30,0,0,0,yahoo,2738,0.5285,True,False,VNT,Unknown
+VRSK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Verisk Analytics,Industrials
+VRSN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Verisign,Information Technology
+VRT,1987,2018-08-02,2026-06-30,0,0,0,yahoo,2738,0.7257,True,False,Vertiv,Industrials
+VRTX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Vertex Pharmaceuticals,Health Care
+VST,2446,2016-10-05,2026-06-30,0,0,0,yahoo,2738,0.8934,True,False,Vistra Corp.,Utilities
+VTR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Ventas,Real Estate
+VTRS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Viatris,Health Care
+VZ,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,Verizon,Communication Services
+WAB,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Wabtec,Industrials
+WAT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Waters Corporation,Health Care
+WBA,2428,2016-01-04,2025-08-28,0,0,0,tiingo,2738,0.8868,False,False,WBA,Unknown
+WBD,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Warner Bros. Discovery,Communication Services
+WCG,1021,2016-01-04,2020-01-23,0,0,0,tiingo,2738,0.3729,True,False,WCG,Unknown
+WDAY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Workday, Inc.",Information Technology
+WDC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Western Digital,Information Technology
+WEC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,WEC Energy Group,Utilities
+WELL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Welltower,Real Estate
+WFC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Wells Fargo,Financials
+WFM,418,2016-01-04,2017-08-29,0,0,0,tiingo,2738,0.1527,True,False,WFM,Unknown
+WHR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,WHR,Unknown
+WM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Waste Management,Industrials
+WMB,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Williams Companies,Energy
+WMT,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Walmart,Consumer Staples
+WRB,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,W. R. Berkley Corporation,Financials
+WSM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Williams-Sonoma, Inc.",Consumer Discretionary
+WST,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,West Pharmaceutical Services,Health Care
+WTW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Willis Towers Watson,Financials
+WU,2637,2016-01-04,2026-06-30,0,3,0,yahoo,2738,0.9631,False,True,WU,Unknown
+WY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Weyerhaeuser,Real Estate
+WYND,2637,2016-01-04,2026-06-30,0,0,0,tiingo,2738,0.9631,False,False,WYND,Unknown
+WYNN,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Wynn Resorts,Consumer Discretionary
+XEC,1449,2016-01-04,2021-10-04,0,0,0,tiingo,2738,0.5292,True,False,XEC,Unknown
+XEL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Xcel Energy,Utilities
+XL,680,2016-01-04,2018-09-13,0,0,0,tiingo,2738,0.2484,True,False,XL,Unknown
+XLNX,1541,2016-01-04,2022-02-14,0,0,0,tiingo,2738,0.5628,True,False,XLNX,Unknown
+XOM,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,ExxonMobil,Energy
+XRAY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,XRAY,Unknown
+XRX,2637,2016-01-04,2026-06-30,0,5,0,yahoo,2738,0.9631,False,True,XRX,Unknown
+XYL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Xylem Inc.,Industrials
+XYZ,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,"Block, Inc.",Financials
+YUM,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Yum! Brands,Consumer Discretionary
+ZBH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Zimmer Biomet,Health Care
+ZBRA,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Zebra Technologies,Information Technology
+ZION,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ZION,Unknown
+ZTS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Zoetis,Health Care

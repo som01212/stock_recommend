@@ -1,0 +1,22 @@
+ticker,company,sector,collected,n_rows,fail_stage,fail_reason
+ADS,ADS,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: empty response
+BBBY,BBBY,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 400 | tiingo: empty response
+BK,BK,Unknown,False,0,yahoo+chart,yahoo: empty response | chart: HTTP 404
+CBS,CBS,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+CCE,CCE,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: no data | tiingo: empty response
+COG,COG,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: empty response
+CSRA,CSRA,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 400 | tiingo: empty response
+CTL,CTL,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: empty response
+ENDP,ENDP,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+EQR,Equity Residential,Real Estate,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 400 | tiingo: empty response
+ESV,ESV,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+FRC,FRC,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+HFC,HFC,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+HONA,Honeywell Aerospace,Industrials,False,0,yahoo+chart,yahoo: rows=11 | chart: None
+JEC,JEC,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: unknown
+JNPR,JNPR,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: unknown
+MMC,MMC,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: empty response
+MNK,MNK,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: not found
+NFX,NFX,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 400 | tiingo: empty response
+PEAK,PEAK,Unknown,False,0,yahoo+chart,yahoo: empty response | chart: HTTP 404
+TMK,TMK,Unknown,False,0,yahoo+chart+tiingo,yahoo: empty response | chart: HTTP 404 | tiingo: empty response

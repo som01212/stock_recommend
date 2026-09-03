@@ -8,7 +8,7 @@
 ```
 share/
   data/
-    final_df.parquet               정제된 일별 OHLCV (707종목, 2016-01-04~2026-06-30)
+    final_df.parquet               정제된 일별 OHLCV (710종목, 2016-01-04~2026-06-30)
                                     ※ 스크립트 실행 후에는 30/60/120/252일 피처 16개
                                       컬럼이 추가된 상태로 덮어집니다.
                                     ※ PARA(Paramount)는 원본 종목 수(708개)에서 제외됨
@@ -19,6 +19,10 @@ share/
                                       부분 복구 대신 종목 전체를 뺐음. 자세한 검증
                                       근거는 메인 프로젝트의
                                       notebooks/02_preprocessing.ipynb 참고.
+                                    ※ 2026-09-03: 사명·티커가 바뀌어 누락돼 있던
+                                      3종목을 복구해 707 → 710종목이 됐습니다
+                                      (ADS→BFH, EQR→VMRK, FRC→FRCB). 검증 절차는
+                                      src/membership.py의 TRUSTED_RENAMES 주석 참고.
     sp500_beta_df.parquet          S&P500 가격지수(^GSPC) 종가. 2026-09-02
                                     이전에는 베타 계산에 쓰였으나, 지금은
                                     스크립트가 더 이상 읽지 않는 참고용 파일

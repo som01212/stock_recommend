@@ -137,21 +137,94 @@ def add_forward_returns(clustered_df: pd.DataFrame, prices: pd.DataFrame) -> pd.
     return df.drop(columns=["entry_price"])
 
 
-def summarize_by_group(df: pd.DataFrame) -> pd.DataFrame:
-    """Per-date mean forward return, stable cluster vs the rest.
+DEFAULT_MIN_GROUP_SIZE = 5
 
-    Rows with cluster == -1 (warmup period, not enough history) or a
-    missing forward return (last rebalancing date) are excluded.
+
+def summarize_by_group(
+    df: pd.DataFrame,
+    min_group_size: int = DEFAULT_MIN_GROUP_SIZE,
+    verbose: bool = True,
+) -> pd.DataFrame:
+    """Per-date equal-weight return of the stable cluster vs the rest.
+
+    Rows with cluster == -1 (warmup period, not enough history) or a missing
+    forward return (last rebalancing date) are excluded. Snapshots where
+    either side has fewer than ``min_group_size`` tickers are also dropped --
+    see the "퇴화 스냅샷" note below for why -- and reported when that happens.
+
+    Returns per-date ``stable_mean_return`` / ``other_mean_return`` /
+    ``stable_minus_other`` plus the group sizes (``stable_n`` / ``other_n``)
+    that produced them, so a reader can always see how many tickers each
+    average was computed from.
     """
     valid = df[(df["cluster"] != -1) & df["forward_return"].notna()]
+    grouped = valid.groupby(["Date", "is_stable_cluster"])["forward_return"]
     summary = (
-        valid.groupby(["Date", "is_stable_cluster"])["forward_return"]
-        .mean()
+        grouped.mean()
         .unstack("is_stable_cluster")
         .rename(columns={True: "stable_mean_return", False: "other_mean_return"})
     )
+    sizes = (
+        grouped.size()
+        .unstack("is_stable_cluster")
+        .rename(columns={True: "stable_n", False: "other_n"})
+        .reindex(columns=["stable_n", "other_n"])
+        .fillna(0)
+        .astype(int)
+    )
+    summary = summary.join(sizes)
+
+    # ------------------------------------------------------------------
+    # 퇴화 스냅샷 제외 (2026-09-03 결정)
+    #
+    # 왜 필요한가 — 실제로 겪은 사례:
+    #   FRC(First Republic Bank)를 복구하고 나니, 30일 리밸런싱의 2023-04-12
+    #   시점에서 군집이 **안정군 500종목 / 나머지군 1종목(FRCB)**으로 갈렸다.
+    #   붕괴 중이던 FRC의 beta/volatility가 극단값이라 Ward가 이 점 하나를
+    #   따로 떼어낸 것이다(알고리즘은 정상 동작). 그 결과 "나머지군 평균
+    #   수익률"이 FRCB 한 종목의 -97.9%가 되어버렸다.
+    #
+    #   영향은 작지 않았다 — 이 1개 시점이 30일 구간 전체를 이렇게 흔들었다:
+    #     나머지군 위험대비수익   0.264 → 0.075
+    #     안정-나머지 평균 격차  -0.53% → +0.57%  (부호가 뒤집힘)
+    #   즉 "안정군 우위"라는 결론의 일부가 1종목짜리 가짜 포트폴리오에
+    #   떠받쳐지고 있었다. 제외하면 결과가 이 프로젝트 주장에 **불리해지므로**,
+    #   유리하게 만들기 위한 보정이 아니다.
+    #
+    # 왜 클러스터링이 아니라 여기서 막는가:
+    #   Ward는 잘못한 게 없다. 최소 군집 크기를 강제하면 문제 1건을 고치려고
+    #   161개 전 시점의 군집 소속을 바꾸게 된다. 반면 여기서 막으면 "이 날짜는
+    #   유의미한 그룹 비교를 만들 수 없다"는 판단만 하는 것이고, 이미 하고 있는
+    #   제외(cluster == -1 워밍업, forward_return 결측)와 성격이 같다.
+    #   또 위험을 포트폴리오 단위로 재기로 한 결정(_portfolio_return_series)과도
+    #   일관된다 — 1종목은 포트폴리오가 아니다.
+    #
+    # 임계값이 자의적이지 않은 이유:
+    #   윈도우별 최소 그룹 크기가 30일 1 / 60일 25 / 120일 62 / 252일 64로,
+    #   1과 25 사이가 비어 있다. 2~25 사이 어떤 값을 골라도 결과가 동일하다.
+    #
+    # 반드시 보고한다:
+    #   이 사건의 진짜 문제는 500대1 분할이 헤드라인 숫자를 만들었는데 아무도
+    #   몰랐다는 점이다. 그래서 제외가 발생하면 조용히 넘어가지 않고 출력한다.
+    # ------------------------------------------------------------------
+    degenerate = summary[summary[["stable_n", "other_n"]].min(axis=1) < min_group_size]
+    if len(degenerate):
+        if verbose:
+            print(
+                f"[경고] 한쪽 그룹이 {min_group_size}종목 미만이라 제외한 스냅샷 "
+                f"{len(degenerate)}건 / 전체 {len(summary)}건 "
+                "— 1~2종목짜리 그룹은 포트폴리오로 볼 수 없어 비교에서 뺍니다."
+            )
+            print(
+                degenerate[["stable_n", "other_n", "stable_mean_return", "other_mean_return"]]
+                .to_string()
+            )
+        summary = summary.drop(index=degenerate.index)
+
     summary["stable_minus_other"] = summary["stable_mean_return"] - summary["other_mean_return"]
-    return summary
+    return summary[
+        ["stable_mean_return", "other_mean_return", "stable_minus_other", "stable_n", "other_n"]
+    ]
 
 
 def overall_stats(summary: pd.DataFrame) -> pd.Series:
@@ -168,7 +241,10 @@ def overall_stats(summary: pd.DataFrame) -> pd.Series:
     )
 
 
-def _portfolio_return_series(df: pd.DataFrame) -> dict[str, pd.Series]:
+def _portfolio_return_series(
+    df: pd.DataFrame,
+    min_group_size: int = DEFAULT_MIN_GROUP_SIZE,
+) -> dict[str, pd.Series]:
     """Per-date equal-weight portfolio return series for each group (2026-09-02
     fix): the mean forward return across every ticker held in that group on
     that date, i.e. exactly what an investor equal-weighting the group would
@@ -182,14 +258,17 @@ def _portfolio_return_series(df: pd.DataFrame) -> dict[str, pd.Series]:
     (diversification) -- std of the pooled observations overstates the
     portfolio's actual risk and understates its Sharpe ratio.
     """
-    summary = summarize_by_group(df)
+    summary = summarize_by_group(df, min_group_size=min_group_size)
     return {
         "stable_cluster": summary["stable_mean_return"].dropna(),
         "other_clusters": summary["other_mean_return"].dropna(),
     }
 
 
-def risk_adjusted_stats(df: pd.DataFrame) -> pd.DataFrame:
+def risk_adjusted_stats(
+    df: pd.DataFrame,
+    min_group_size: int = DEFAULT_MIN_GROUP_SIZE,
+) -> pd.DataFrame:
     """Per-date equal-weight portfolio return per group, compared by
     return per unit of risk (mean / std) -- not just raw mean return.
 
@@ -200,7 +279,7 @@ def risk_adjusted_stats(df: pd.DataFrame) -> pd.DataFrame:
     pooled individual-stock returns, so it reflects diversified portfolio
     risk rather than idiosyncratic stock-level volatility.
     """
-    series = _portfolio_return_series(df)
+    series = _portfolio_return_series(df, min_group_size=min_group_size)
     stats = pd.DataFrame(
         {label: {"n": s.count(), "mean": s.mean(), "std": s.std()} for label, s in series.items()}
     ).T
@@ -212,6 +291,7 @@ def sharpe_ratio_stats(
     df: pd.DataFrame,
     window: int,
     annual_risk_free_rate: float = 0.02,
+    min_group_size: int = DEFAULT_MIN_GROUP_SIZE,
 ) -> pd.DataFrame:
     """Annualized Sharpe ratio per group, computed from each group's
     date-level equal-weight portfolio return series (see
@@ -227,7 +307,7 @@ def sharpe_ratio_stats(
     and that comparison is not sensitive to the exact risk-free assumption
     (subtracting the same constant from both groups barely moves their gap).
     """
-    series = _portfolio_return_series(df)
+    series = _portfolio_return_series(df, min_group_size=min_group_size)
     period_risk_free = (1 + annual_risk_free_rate) ** (window / TRADING_DAYS_PER_YEAR) - 1
     periods_per_year = TRADING_DAYS_PER_YEAR / window
 

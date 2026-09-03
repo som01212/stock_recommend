@@ -1,23 +1,14 @@
 Ticker,company,sector,fail_stage,fail_reason,n_rows_raw,n_rows_final
-ADS,ADS,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: empty response,0,0
 BBBY,BBBY,Unknown,collection,yahoo: empty response | chart: HTTP 400 | tiingo: empty response,0,0
-BK,BK,Unknown,collection,yahoo: empty response | chart: HTTP 404,0,0
 CBS,CBS,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
 CCE,CCE,Unknown,collection,yahoo: empty response | chart: no data | tiingo: empty response,0,0
 COG,COG,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: empty response,0,0
 CSRA,CSRA,Unknown,collection,yahoo: empty response | chart: HTTP 400 | tiingo: empty response,0,0
-CTL,CTL,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: empty response,0,0
 ENDP,ENDP,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
-EQR,Equity Residential,Real Estate,collection,yahoo: empty response | chart: HTTP 400 | tiingo: empty response,0,0
 ESV,ESV,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
-FRC,FRC,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
 HFC,HFC,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
 HONA,Honeywell Aerospace,Industrials,collection,yahoo: rows=11 | chart: None,0,0
-JEC,JEC,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: unknown,0,0
 JNPR,JNPR,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: unknown,0,0
-MMC,MMC,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: empty response,0,0
 MNK,MNK,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: not found,0,0
 NFX,NFX,Unknown,collection,yahoo: empty response | chart: HTTP 400 | tiingo: empty response,0,0
 PARA,PARA,Unknown,collection,"채권 가격 오염 추정 — 부분 구간 액면가 근접 저변동성 패턴, 상세는 위 주석",0,0
-PEAK,PEAK,Unknown,collection,yahoo: empty response | chart: HTTP 404,0,0
-TMK,TMK,Unknown,collection,yahoo: empty response | chart: HTTP 404 | tiingo: empty response,0,0

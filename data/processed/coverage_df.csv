@@ -81,6 +81,7 @@ BCR,503,2016-01-04,2017-12-29,0,0,0,tiingo,2738,0.1837,True,False,BCR,Unknown
 BDX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Becton Dickinson,Health Care
 BEN,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Franklin Resources,Financials
 BF-B,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Brown–Forman,Consumer Staples
+BFH,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,ADS,Unknown
 BG,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bunge Global,Consumer Staples
 BHF,2251,2017-07-17,2026-06-30,0,0,0,yahoo,2738,0.8221,True,False,BHF,Unknown
 BHGE,2259,2017-07-05,2026-06-30,0,0,0,tiingo,2738,0.8251,True,False,BHGE,Unknown
@@ -91,7 +92,7 @@ BKR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Baker Hughes,
 BLDR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Builders FirstSource,Industrials
 BLK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,BlackRock,Financials
 BMY,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Bristol Myers Squibb,Health Care
-BNY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,BNY Mellon,Financials
+BNY,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,BK,Unknown
 BR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Broadridge Financial Solutions,Industrials
 BRCM,26,2016-01-04,2016-02-09,0,0,0,tiingo,2738,0.0095,True,False,BRCM,Unknown
 BRK-B,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Berkshire Hathaway,Financials
@@ -269,6 +270,7 @@ FMC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FMC,Unknown
 FOSL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FOSL,Unknown
 FOX,1835,2019-03-13,2026-06-30,0,0,0,yahoo,2738,0.6702,True,False,Fox Corporation (Class B),Communication Services
 FOXA,1836,2019-03-12,2026-06-30,0,0,0,yahoo,2738,0.6706,True,False,Fox Corporation (Class A),Communication Services
+FRCB,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,FRC,Unknown
 FRT,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Federal Realty Investment Trust,Real Estate
 FSLR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,First Solar,Information Technology
 FTI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,FTI,Unknown
@@ -398,7 +400,7 @@ LNT,2637,2016-01-04,2026-06-30,0,2,0,yahoo,2738,0.9631,False,True,Alliant Energy
 LOW,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lowe's,Consumer Discretionary
 LRCX,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lam Research,Information Technology
 LULU,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Lululemon Athletica,Consumer Discretionary
-LUMN,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,LUMN,Unknown
+LUMN,2637,2016-01-04,2026-06-30,0,4,0,yahoo,2738,0.9631,False,True,CTL,Unknown
 LUV,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Southwest Airlines,Industrials
 LVLT,463,2016-01-04,2017-11-01,0,0,0,tiingo,2738,0.1691,True,False,LVLT,Unknown
 LVS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Las Vegas Sands,Consumer Discretionary
@@ -437,7 +439,7 @@ MPWR,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Monolithic P
 MRK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Merck & Co.,Health Care
 MRNA,1899,2018-12-07,2026-06-30,0,0,0,yahoo,2738,0.6936,True,False,Moderna,Health Care
 MRO,2239,2016-01-04,2024-11-22,0,0,0,tiingo,2738,0.8178,False,False,MRO,Unknown
-MRSH,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Marsh McLennan,Financials
+MRSH,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,MMC,Unknown
 MRVL,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Marvell Technology,Information Technology
 MS,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Morgan Stanley,Financials
 MSCI,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,MSCI Inc.,Financials
@@ -659,6 +661,7 @@ VICI,2134,2018-01-02,2026-06-30,0,4,0,yahoo,2738,0.7794,True,True,Vici Propertie
 VLO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Valero Energy,Energy
 VLTO,686,2023-10-04,2026-06-30,0,0,0,yahoo,2738,0.2505,True,False,Veralto,Industrials
 VMC,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Vulcan Materials Company,Materials
+VMRK,2637,2016-01-04,2026-06-30,0,1,0,yahoo,2738,0.9631,False,True,Equity Residential,Real Estate
 VNO,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,VNO,Unknown
 VNT,1447,2020-09-24,2026-06-30,0,0,0,yahoo,2738,0.5285,True,False,VNT,Unknown
 VRSK,2637,2016-01-04,2026-06-30,0,0,0,yahoo,2738,0.9631,False,False,Verisk Analytics,Industrials

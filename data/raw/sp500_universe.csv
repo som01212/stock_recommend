@@ -14,7 +14,6 @@ ADBE,ADBE,Adobe Inc.,Information Technology
 ADI,ADI,Analog Devices,Information Technology
 ADM,ADM,Archer Daniels Midland,Consumer Staples
 ADP,ADP,Automatic Data Processing,Industrials
-ADS,ADS,ADS,Unknown
 ADSK,ADSK,Autodesk,Information Technology
 ADT,ADT,ADT,Unknown
 AEE,AEE,Ameren,Utilities
@@ -83,18 +82,18 @@ BCR,BCR,BCR,Unknown
 BDX,BDX,Becton Dickinson,Health Care
 BEN,BEN,Franklin Resources,Financials
 BF.B,BF-B,Brown–Forman,Consumer Staples
+ADS,BFH,ADS,Unknown
 BG,BG,Bunge Global,Consumer Staples
 BHF,BHF,BHF,Unknown
 BHGE,BHGE,BHGE,Unknown
 BIIB,BIIB,Biogen,Health Care
 BIO,BIO,BIO,Unknown
-BK,BK,BK,Unknown
 BKNG,BKNG,Booking Holdings,Consumer Discretionary
 BKR,BKR,Baker Hughes,Energy
 BLDR,BLDR,Builders FirstSource,Industrials
 BLK,BLK,BlackRock,Financials
 BMY,BMY,Bristol Myers Squibb,Health Care
-BNY,BNY,BNY Mellon,Financials
+BK,BNY,BK,Unknown
 BR,BR,Broadridge Financial Solutions,Industrials
 BRCM,BRCM,BRCM,Unknown
 BRK.B,BRK-B,Berkshire Hathaway,Financials
@@ -171,7 +170,6 @@ CSGP,CSGP,CoStar Group,Real Estate
 CSRA,CSRA,CSRA,Unknown
 CSX,CSX,CSX Corporation,Industrials
 CTAS,CTAS,Cintas,Industrials
-CTL,CTL,CTL,Unknown
 CTLT,CTLT,CTLT,Unknown
 CTRA,CTRA,CTRA,Unknown
 CTSH,CTSH,Cognizant,Information Technology
@@ -237,7 +235,6 @@ ENPH,ENPH,ENPH,Unknown
 EOG,EOG,EOG Resources,Energy
 EPAM,EPAM,EPAM,Unknown
 EQIX,EQIX,Equinix,Real Estate
-EQR,EQR,Equity Residential,Real Estate
 EQT,EQT,EQT Corporation,Energy
 ERIE,ERIE,Erie Indemnity,Financials
 ES,ES,Eversource Energy,Utilities
@@ -280,7 +277,7 @@ FMC,FMC,FMC,Unknown
 FOSL,FOSL,FOSL,Unknown
 FOX,FOX,Fox Corporation (Class B),Communication Services
 FOXA,FOXA,Fox Corporation (Class A),Communication Services
-FRC,FRC,FRC,Unknown
+FRC,FRCB,FRC,Unknown
 FRT,FRT,Federal Realty Investment Trust,Real Estate
 FSLR,FSLR,First Solar,Information Technology
 FTI,FTI,FTI,Unknown
@@ -369,7 +366,6 @@ J,J,Jacobs Solutions,Industrials
 JBHT,JBHT,J.B. Hunt,Industrials
 JBL,JBL,Jabil,Information Technology
 JCI,JCI,Johnson Controls,Industrials
-JEC,JEC,JEC,Unknown
 JEF,JEF,JEF,Unknown
 JKHY,JKHY,Jack Henry & Associates,Financials
 JNJ,JNJ,Johnson & Johnson,Health Care
@@ -414,7 +410,7 @@ LNT,LNT,Alliant Energy,Utilities
 LOW,LOW,Lowe's,Consumer Discretionary
 LRCX,LRCX,Lam Research,Information Technology
 LULU,LULU,Lululemon Athletica,Consumer Discretionary
-LUMN,LUMN,LUMN,Unknown
+CTL,LUMN,CTL,Unknown
 LUV,LUV,Southwest Airlines,Industrials
 LVLT,LVLT,LVLT,Unknown
 LVS,LVS,Las Vegas Sands,Consumer Discretionary
@@ -442,7 +438,6 @@ MJN,MJN,MJN,Unknown
 MKC,MKC,McCormick & Company,Consumer Staples
 MKTX,MKTX,MKTX,Unknown
 MLM,MLM,Martin Marietta Materials,Materials
-MMC,MMC,MMC,Unknown
 MMM,MMM,3M,Industrials
 MNK,MNK,MNK,Unknown
 MNST,MNST,Monster Beverage,Consumer Staples
@@ -455,7 +450,7 @@ MPWR,MPWR,Monolithic Power Systems,Information Technology
 MRK,MRK,Merck & Co.,Health Care
 MRNA,MRNA,Moderna,Health Care
 MRO,MRO,MRO,Unknown
-MRSH,MRSH,Marsh McLennan,Financials
+MMC,MRSH,MMC,Unknown
 MRVL,MRVL,Marvell Technology,Information Technology
 MS,MS,Morgan Stanley,Financials
 MSCI,MSCI,MSCI Inc.,Financials
@@ -517,7 +512,6 @@ PCG,PCG,PG&E Corporation,Utilities
 PCL,PCL,PCL,Unknown
 PCP,PCP,PCP,Unknown
 PDCO,PDCO,PDCO,Unknown
-PEAK,PEAK,PEAK,Unknown
 PEG,PEG,Public Service Enterprise Group,Utilities
 PENN,PENN,PENN,Unknown
 PEP,PEP,PepsiCo,Consumer Staples
@@ -634,7 +628,6 @@ THC,THC,THC,Unknown
 TIF,TIF,TIF,Unknown
 TJX,TJX,TJX Companies,Consumer Discretionary
 TKO,TKO,TKO Group Holdings,Communication Services
-TMK,TMK,TMK,Unknown
 TMO,TMO,Thermo Fisher Scientific,Health Care
 TMUS,TMUS,T-Mobile US,Communication Services
 TPL,TPL,Texas Pacific Land Corporation,Energy
@@ -681,6 +674,7 @@ VICI,VICI,Vici Properties,Real Estate
 VLO,VLO,Valero Energy,Energy
 VLTO,VLTO,Veralto,Industrials
 VMC,VMC,Vulcan Materials Company,Materials
+EQR,VMRK,Equity Residential,Real Estate
 VNO,VNO,VNO,Unknown
 VNT,VNT,VNT,Unknown
 VRSK,VRSK,Verisk Analytics,Industrials

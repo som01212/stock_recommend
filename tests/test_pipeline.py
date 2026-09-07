@@ -42,6 +42,7 @@ from src.backtest import (
 )
 from src.performance import (
     add_forward_returns,
+    significance_stats,
     risk_adjusted_stats,
     sharpe_ratio_stats,
     summarize_by_group,
@@ -272,6 +273,64 @@ def test_group_sizes_are_reported_in_summary():
     summary = summarize_by_group(add_forward_returns(clustered, prices), min_group_size=2)
     assert {"stable_n", "other_n"} <= set(summary.columns), summary.columns.tolist()
     assert summary.iloc[0]["stable_n"] == 2 and summary.iloc[0]["other_n"] == 2
+
+
+# ----------------------------------------------------------------------
+# 3c. 유의성 검정 — 점추정치의 부호가 아니라 불확실성을 보고해야 한다
+# ----------------------------------------------------------------------
+def _paired_frame(stable_series, other_series, dates):
+    """날짜별 두 그룹 수익률을 직접 지정해 만든 검정용 입력."""
+    rows = []
+    for d, s, o in zip(dates, stable_series, other_series):
+        for v, flag in ((s, True), (o, False)):
+            for k in range(6):        # 그룹당 6종목 — 최소 그룹 크기 가드 통과용
+                rows.append({"Date": d, "Ticker": f"{'S' if flag else 'O'}{k}",
+                             "cluster": 0, "is_stable_cluster": flag, "forward_return": v})
+    return pd.DataFrame(rows)
+
+
+def test_significance_detects_a_clear_edge():
+    # 안정군이 매 시점 뚜렷하게 앞서고 변동이 작으면 CI가 0을 넘겨야 한다
+    dates = pd.bdate_range("2020-01-01", periods=40)
+    stable = [0.05 + 0.001 * (i % 3) for i in range(40)]
+    other = [0.01 + 0.001 * (i % 3) for i in range(40)]
+    res = significance_stats(_paired_frame(stable, other, dates), n_boot=2000)
+
+    assert res["n"] == 40
+    assert res["mean_gap"] > 0
+    assert res["rpr_ci_low"] > 0, res          # 하한이 0 위 = 유의
+    assert res["rpr_significant"] is True
+
+
+def test_significance_reports_uncertainty_when_edge_is_noise():
+    # 부호는 안정군 쪽이지만 변동이 크면 "유의하지 않다"가 나와야 한다
+    rng = np.random.default_rng(7)
+    dates = pd.bdate_range("2020-01-01", periods=25)
+    other = rng.normal(0.0, 0.09, 25)
+    stable = other + rng.normal(0.002, 0.09, 25)   # 아주 약한 우위 + 큰 잡음
+    res = significance_stats(_paired_frame(stable, other, dates), n_boot=2000)
+
+    assert res["rpr_ci_low"] < 0 < res["rpr_ci_high"], res   # CI가 0을 감쌈
+    assert res["rpr_significant"] is False
+    assert res["rpr_p_boot"] > 0.05
+
+
+def test_significance_ci_widens_as_sample_shrinks():
+    # 표본이 작을수록 CI가 넓어져야 한다 — 252일(n=9) 결과를 읽는 근거
+    rng = np.random.default_rng(11)
+    def width(n):
+        dates = pd.bdate_range("2020-01-01", periods=n)
+        other = rng.normal(0.0, 0.05, n)
+        stable = other + rng.normal(0.01, 0.05, n)
+        r = significance_stats(_paired_frame(stable, other, dates), n_boot=2000)
+        return r["rpr_ci_high"] - r["rpr_ci_low"]
+    assert width(10) > width(80), "표본이 작은데 CI가 더 좁게 나옴"
+
+
+def test_significance_refuses_too_small_a_sample():
+    dates = pd.bdate_range("2020-01-01", periods=2)
+    res = significance_stats(_paired_frame([0.02, 0.03], [0.01, 0.01], dates), n_boot=500)
+    assert res["n"] == 2 and "note" in res
 
 
 # ----------------------------------------------------------------------

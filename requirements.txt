@@ -7,3 +7,4 @@ tqdm>=4.66
 pyarrow>=15.0
 lxml>=5.0
 jupyter>=1.0
+scipy>=1.11

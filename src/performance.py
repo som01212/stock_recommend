@@ -323,3 +323,97 @@ def sharpe_ratio_stats(
             "sharpe_annualized": (mean - period_risk_free) / std * np.sqrt(periods_per_year),
         }
     return pd.DataFrame(rows).T
+
+
+DEFAULT_N_BOOT = 10000
+
+
+def significance_stats(
+    df: pd.DataFrame,
+    n_boot: int = DEFAULT_N_BOOT,
+    seed: int = 42,
+    min_group_size: int = DEFAULT_MIN_GROUP_SIZE,
+) -> pd.Series:
+    """Test whether the stable cluster's edge is statistically distinguishable
+    from zero, rather than only reporting that the point estimate is positive.
+
+    Added 2026-09-07. Everything above answers "which group scored higher";
+    nothing answered "could this gap have come from chance at this sample
+    size" -- and the samples are small (n = 85 / 42 / 20 / 9 by window), so
+    that question is not decoration.
+
+    Two different claims get two different tests, because they are not the
+    same claim and they do not point the same way here:
+
+    1. ``mean_gap`` -- the per-date difference in raw mean return
+       (stable minus other). A low-volatility strategy is NOT supposed to win
+       this one: the thesis is a smoother ride bought by giving up some
+       return. Tested with a one-sample t-test against zero, plus a
+       bootstrap CI since period returns are fat-tailed and n is small.
+    2. ``rpr_diff`` -- the difference in return per unit of risk
+       (mean / std), which IS the project's actual claim. It's a ratio of
+       two statistics, so there is no closed-form t-test; the bootstrap
+       resamples DATES (keeping both groups paired on the same dates, since
+       they share a market) and recomputes the whole ratio each draw.
+
+    Reading the result: a CI that straddles zero means this data cannot
+    distinguish the observed edge from chance -- it does NOT mean the edge is
+    absent. With n <= 85 the study has little power to detect a modest
+    effect, so "not significant" here is a statement about the sample size as
+    much as about the strategy.
+
+    Multiple testing: four rebalancing windows get tested, but they are NOT
+    four independent experiments -- they resample the same underlying price
+    history at different intervals, so a Bonferroni-style correction would be
+    too harsh and treating them as independent confirmation would be too
+    generous. Report them as one family and say so.
+    """
+    summary = summarize_by_group(df, min_group_size=min_group_size, verbose=False)
+    paired = summary[["stable_mean_return", "other_mean_return"]].dropna()
+    stable = paired["stable_mean_return"].to_numpy()
+    other = paired["other_mean_return"].to_numpy()
+    gap = stable - other
+    n = len(gap)
+
+    if n < 3:
+        return pd.Series({"n": n, "note": "표본이 3개 미만이라 검정 불가"})
+
+    def _rpr(x: np.ndarray) -> float:
+        sd = x.std(ddof=1)
+        return float("nan") if sd == 0 else x.mean() / sd
+
+    # 날짜 단위로 대응 재표집한다 -- 두 그룹은 같은 시장을 공유하므로
+    # 각각 따로 뽑으면 상관을 끊어버려 차이의 분산을 과대평가한다.
+    rng = np.random.default_rng(seed)
+    idx = rng.integers(0, n, size=(n_boot, n))
+    boot_gap = gap[idx].mean(axis=1)
+    boot_rpr = np.array([_rpr(stable[i]) - _rpr(other[i]) for i in idx])
+    boot_rpr = boot_rpr[np.isfinite(boot_rpr)]
+
+    def _two_sided_p(draws: np.ndarray) -> float:
+        return float(2 * min((draws <= 0).mean(), (draws >= 0).mean()))
+
+    mean_gap = float(gap.mean())
+    se = gap.std(ddof=1) / np.sqrt(n)
+    t_stat = mean_gap / se if se > 0 else float("nan")
+
+    rpr_stable, rpr_other = _rpr(stable), _rpr(other)
+    rpr_lo, rpr_hi = np.percentile(boot_rpr, [2.5, 97.5])
+    gap_lo, gap_hi = np.percentile(boot_gap, [2.5, 97.5])
+
+    return pd.Series({
+        "n": n,
+        "mean_gap": mean_gap,
+        "mean_gap_t": t_stat,
+        "mean_gap_ci_low": gap_lo,
+        "mean_gap_ci_high": gap_hi,
+        "mean_gap_p_boot": _two_sided_p(boot_gap),
+        "rpr_stable": rpr_stable,
+        "rpr_other": rpr_other,
+        "rpr_diff": rpr_stable - rpr_other,
+        "rpr_ci_low": rpr_lo,
+        "rpr_ci_high": rpr_hi,
+        "rpr_p_boot": _two_sided_p(boot_rpr),
+        "rpr_significant": bool(rpr_lo > 0),
+        "win_rate": float((gap > 0).mean()),
+    })

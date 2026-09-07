@@ -415,5 +415,65 @@ def main() -> int:
     return 1 if failures else 0
 
 
+
+# ----------------------------------------------------------------------
+# 6. 팩터 귀속 — 알려진 계수를 실제로 복원하는가
+# ----------------------------------------------------------------------
+from src.factors import FACTORS, compound_factors_to_periods, factor_regression  # noqa: E402
+
+
+def _factor_panel(n, seed=3):
+    rng = np.random.default_rng(seed)
+    idx = pd.bdate_range("2020-01-01", periods=n)
+    return pd.DataFrame({
+        "Mkt-RF": rng.normal(0.01, 0.05, n), "SMB": rng.normal(0.0, 0.03, n),
+        "HML": rng.normal(0.0, 0.03, n), "MOM": rng.normal(0.0, 0.03, n),
+        "RF": np.full(n, 0.001),
+    }, index=idx)
+
+
+def test_factor_regression_recovers_known_loadings():
+    # y = 0.004 + 0.7*Mkt - 0.3*SMB (+ 작은 잡음) 로 만들고 되찾는지 본다
+    f = _factor_panel(120)
+    rng = np.random.default_rng(9)
+    y = 0.004 + 0.7 * f["Mkt-RF"] - 0.3 * f["SMB"] + rng.normal(0, 0.002, len(f))
+    res = factor_regression(y + f["RF"], f, "합성", subtract_rf=True)
+
+    assert abs(res["alpha"] - 0.004) < 0.002, res["alpha"]
+    assert abs(res["b_Mkt-RF"] - 0.7) < 0.05, res["b_Mkt-RF"]
+    assert abs(res["b_SMB"] + 0.3) < 0.05, res["b_SMB"]
+    assert res["adj_r2"] > 0.9
+
+
+def test_factor_regression_flags_alpha_only_when_real():
+    f = _factor_panel(120, seed=5)
+    rng = np.random.default_rng(13)
+    # 알파가 큰 경우 → 유의, 알파가 0인 경우 → 유의하지 않음
+    strong = 0.02 + 0.6 * f["Mkt-RF"] + rng.normal(0, 0.003, len(f))
+    none_ = 0.6 * f["Mkt-RF"] + rng.normal(0, 0.003, len(f))
+    assert factor_regression(strong + f["RF"], f, "알파有").loc["alpha_significant"] is True
+    assert factor_regression(none_ + f["RF"], f, "알파無").loc["alpha_significant"] is False
+
+
+def test_factor_regression_refuses_underdetermined_sample():
+    # 관측 9개 < 파라미터 5개 x 3 → 숫자를 내놓으면 안 된다 (252일 구간이 이 경우)
+    f = _factor_panel(9)
+    res = factor_regression(f["Mkt-RF"] * 0.5 + f["RF"], f, "표본부족")
+    assert "note" in res and "alpha" not in res
+
+
+def test_compound_factors_matches_strategy_holding_window():
+    # 팩터는 전략과 정확히 같은 날짜 구간에서 복리 누적돼야 한다
+    f = _factor_panel(30)
+    d = f.index
+    perf = pd.DataFrame([{
+        "Date": d[0], "entry_date": d[1], "actual_exit_date": d[5], "forward_return": 0.03,
+    }])
+    got = compound_factors_to_periods(perf, f)
+    expected = (1 + f.loc[d[1]:d[5], "Mkt-RF"]).prod() - 1
+
+    assert got.loc[d[0], "n_days"] == 5
+    assert np.isclose(got.loc[d[0], "Mkt-RF"], expected)
+
 if __name__ == "__main__":
     raise SystemExit(main())

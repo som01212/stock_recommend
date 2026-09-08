@@ -356,6 +356,35 @@ def significance_stats(
        resamples DATES (keeping both groups paired on the same dates, since
        they share a market) and recomputes the whole ratio each draw.
 
+    Why "no closed-form t-test" is true, and not just a convenient excuse
+    (added 2026-09-08, from a presentation Q&A -- see 유의성검정_발표자료.pdf):
+
+    - For a SINGLE group, rpr actually does reduce to something with a known
+      distribution: ``rpr * sqrt(n) = mean / (std / sqrt(n))`` is exactly the
+      one-sample t statistic testing whether that group's mean is zero. So
+      "is rpr_stable different from 0" has a textbook answer under normality.
+    - What this function asks instead is the DIFFERENCE of two such ratios,
+      ``rpr_stable - rpr_other``, computed from two samples that are (a)
+      paired on the same dates (they share a market), (b) fat-tailed, not
+      normal, and (c) tiny (n = 9 to 85). Its variance is
+      ``Var(A) + Var(B) - 2*Cov(A, B)``, and every term in that expression is
+      itself only an asymptotic approximation:
+        * Var(a ratio of mean/std) needs the delta method, which needs large
+          n and a reliable kurtosis estimate -- neither holds here.
+        * Cov(rpr_stable, rpr_other) has a named textbook test (Jobson-Korkie
+          1981, corrected by Memmel 2003, for comparing two correlated Sharpe
+          ratios) -- but it too assumes joint normality and large-sample
+          asymptotics. Plugging n=9 fat-tailed data into it would produce a
+          confidently narrow, wrong confidence interval, not a missing one.
+    - That is what "no closed-form test" means precisely: the formulas exist
+      in the literature, but they need assumptions this sample cannot meet.
+      The bootstrap sidesteps all three assumptions at once -- it never
+      needs normality, kurtosis, or a covariance formula, because it just
+      recomputes ``rpr_stable - rpr_other`` on resampled data and reads the
+      spread off directly. Its failure mode is also more honest: when n is
+      too small (see the 252-day row, n=9) the CI balloons visibly instead
+      of a formula silently reporting false precision.
+
     Reading the result: a CI that straddles zero means this data cannot
     distinguish the observed edge from chance -- it does NOT mean the edge is
     absent. With n <= 85 the study has little power to detect a modest
